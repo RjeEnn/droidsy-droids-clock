@@ -7,7 +7,34 @@
     android:background="#812f33"
     tools:context=".FocusActivity">
 
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_menu_24" />
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="283dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="114dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/union"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton12"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_palette_24" />
+
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#000000"
@@ -77,10 +104,186 @@
             android:background="#00FFFFFF"
             android:backgroundTint="#00FFFFFF"
             android:fontFamily="@font/comfortaa_bold"
-            android:text="@string/focus_button_ul"
-            android:textFontWeight="5"
-            android:textAllCaps="false"
             android:minWidth="100dp"
+            android:text="@string/focus_button_ul"
+            android:textAllCaps="false"
+            android:textFontWeight="5"
             android:textSize="13sp" />
     </LinearLayout>
+
+    <EditText
+        android:id="@+id/editWork"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="#00FFFFFF"
+        android:ems="10"
+        android:fontFamily="@font/comfortaa_bold"
+        android:inputType="textPersonName"
+        android:text="@string/work"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/editBrk1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editBrk1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="#00FFFFFF"
+        android:ems="10"
+        android:fontFamily="@font/comfortaa_bold"
+        android:inputType="textPersonName"
+        android:text="@string/brk1"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/editBrk2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editWork" />
+
+    <EditText
+        android:id="@+id/editBrk2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="#00FFFFFF"
+        android:ems="10"
+        android:fontFamily="@font/comfortaa_bold"
+        android:inputType="textPersonName"
+        android:text="@string/brk2"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editBrk1" />
+
+    <TextView
+        android:id="@+id/time_for_work"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="#721C1C1C"
+        android:fontFamily="@font/comfortaa_bold"
+        android:gravity="center"
+        android:text="@string/wrk_time"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/time_for_break1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editWork"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/time_for_break2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="#721C1C1C"
+        android:fontFamily="@font/comfortaa_bold"
+        android:gravity="center"
+        android:text="@string/brk2_time"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editBrk2"
+        app:layout_constraintTop_toBottomOf="@+id/time_for_break1" />
+
+    <TextView
+        android:id="@+id/time_for_break1"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="#721C1C1C"
+        android:fontFamily="@font/comfortaa_bold"
+        android:gravity="center"
+        android:text="@string/brk1_time"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/time_for_break2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editBrk1"
+        app:layout_constraintTop_toBottomOf="@+id/time_for_work" />
+
+    <ImageButton
+        android:id="@+id/begin_focus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/sound_focus"
+        app:layout_constraintTop_toBottomOf="@+id/time_for_break2"
+        app:srcCompat="@drawable/ic_begin_focus" />
+
+    <ImageButton
+        android:id="@+id/sound_focus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toStartOf="@+id/begin_focus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editBrk2"
+        app:srcCompat="@drawable/ic_baseline_volume_off_24" />
+
+    <TextView
+        android:id="@+id/session_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="@string/work"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/time_remaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="@string/wrk_time"
+        android:textColor="#FFFFFF"
+        android:textSize="65sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/sound_on_focus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toStartOf="@id/pause_focus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time_remaining"
+        app:srcCompat="@drawable/ic_baseline_volume_up_24" />
+
+    <ImageButton
+        android:id="@+id/pause_focus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sound_on_focus"
+        app:layout_constraintTop_toBottomOf="@+id/time_remaining"
+        app:srcCompat="@drawable/ic_baseline_pause_24" />
+
+    <ImageButton
+        android:id="@+id/cancel_focus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time_remaining"
+        app:srcCompat="@drawable/ic_baseline_cancel_24" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

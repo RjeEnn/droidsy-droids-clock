@@ -35,4 +35,17 @@
     <string name="new_alm">new alarm</string>
     <string name="set">set</string>
     <string name="colon">:</string>
+
+    <!-- Stopwatch Page -->
+    <string name="start">start</string>
+    <string name="timing">00 : 01 : 41</string>
+    <string name="stopwatch_format">hr  min  sec</string>
+
+    <!-- Focus Page -->
+    <string name="work">work</string>
+    <string name="brk1">short break</string>
+    <string name="brk2">long break</string>
+    <string name="wrk_time">00:30:00</string>
+    <string name="brk1_time">00:05:00</string>
+    <string name="brk2_time">00:10:00</string>
 </resources>

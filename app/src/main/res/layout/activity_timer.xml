@@ -7,7 +7,57 @@
     android:background="#812f33"
     tools:context=".TimerActivity">
 
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_menu_24" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="283dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="114dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/union"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton12"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_palette_24" />
+
+    <View
+        android:id="@+id/union2"
+        android:layout_width="290dp"
+        android:layout_height="290dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/ic_union"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/ellipse"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:background="@drawable/ellipse_1"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.468" />
+
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#000000"
@@ -65,8 +115,8 @@
             android:backgroundTint="#00FFFFFF"
             android:fontFamily="@font/comfortaa_bold"
             android:text="@string/timer_button_ul"
-            android:textFontWeight="5"
             android:textAllCaps="false"
+            android:textFontWeight="5"
             android:textSize="13sp" />
 
         <Button
@@ -82,4 +132,114 @@
             android:textAllCaps="false"
             android:textSize="11sp" />
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/start_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ellipse"
+        app:srcCompat="@drawable/ic_start_timer" />
+
+    <ImageButton
+        android:id="@+id/cancel_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/union2"
+        app:srcCompat="@drawable/ic_cancel_timer" />
+
+    <NumberPicker
+        android:id="@+id/timer_hr"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="30dp"
+        android:theme="@style/pickerT"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toStartOf="@+id/timer_min"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <NumberPicker
+        android:id="@+id/timer_min"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="30dp"
+        android:theme="@style/pickerT"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="@+id/union2"
+        app:layout_constraintStart_toStartOf="@+id/union2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <NumberPicker
+        android:id="@+id/timer_sec"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="30dp"
+        android:theme="@style/pickerT"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/timer_min"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/format"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="@string/stopwatch_format"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ellipse"
+        app:layout_constraintEnd_toEndOf="@+id/ellipse"
+        app:layout_constraintStart_toStartOf="@+id/ellipse"
+        app:layout_constraintTop_toBottomOf="@+id/timer_min" />
+
+    <ImageButton
+        android:id="@+id/alrm_tone"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="300dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toStartOf="@+id/union2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/alarm_tone" />
+
+    <ImageButton
+        android:id="@+id/add15"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="300dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/union2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic__a15s" />
+
+    <ImageButton
+        android:id="@+id/sub15"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="250dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/union2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic__15s" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
