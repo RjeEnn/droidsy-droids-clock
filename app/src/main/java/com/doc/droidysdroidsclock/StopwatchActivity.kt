@@ -1,25 +1,25 @@
 package com.doc.droidysdroidsclock
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
 
-class AlarmActivity: AppCompatActivity() {
-
+class StopwatchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_alarm)
+        setContentView(R.layout.activity_stopwatch)
 
+        // BUTTONS
         val clockTab: Button = findViewById(R.id.button)
         clockTab.setOnClickListener {
             Intent(this, MainActivity::class.java).also {
                 startActivity(it)
             }
         }
-        val stopwatchTab: Button = findViewById(R.id.button3)
-        stopwatchTab.setOnClickListener {
-            Intent(this, StopwatchActivity::class.java).also {
+        val alarmTab: Button = findViewById(R.id.button2)
+        alarmTab.setOnClickListener {
+            Intent(this, AlarmActivity::class.java).also {
                 startActivity(it)
             }
         }
@@ -32,14 +32,6 @@ class AlarmActivity: AppCompatActivity() {
         val focusTab: Button = findViewById(R.id.button5)
         focusTab.setOnClickListener {
             Intent(this, FocusActivity::class.java).also {
-                startActivity(it)
-            }
-        }
-
-
-        val setBtn: Button = findViewById(R.id.new_alm_btn)
-        setBtn.setOnClickListener {
-            Intent(this, SetAlarmActivity::class.java).also {
                 startActivity(it)
             }
         }

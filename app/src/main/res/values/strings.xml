@@ -13,4 +13,26 @@
     <string name="timer_button_ul"><b><u>timer</u></b></string>
     <string name="focus_button_ul"><b><u>focus</u></b></string>
     <string name="alarm_button_ul"><b><u>alarm</u></b></string>
+
+
+    <!-- Alarm Labels -->
+    <string name="alm1">alarm 1</string>
+    <string name="alm2">alarm 2</string>
+    <string name="alm3">alarm 3</string>
+    <string name="alm4">alarm 4</string>
+    <string name="alm5">alarm 5</string>
+
+
+    <!-- Times -->
+    <string name="am11">11:00 am</string>
+    <string name="pm1">1:00 pm</string>
+    <string name="pm3">3:00 pm</string>
+    <string name="pm10">10:00 pm</string>
+    <string name="pm11">11:00 pm</string>
+
+
+    <!-- Alarm Page -->
+    <string name="new_alm">new alarm</string>
+    <string name="set">set</string>
+    <string name="colon">:</string>
 </resources>

@@ -5,8 +5,17 @@
       <map>
         <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/drawable/backgroundgradient.xml" value="0.290625" />
         <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.290625" />
-        <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/layout/activity_alarm.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/drawable/polygon_1.xml" value="0.290625" />
+        <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/drawable/rectangle_1.xml" value="0.290625" />
+        <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/drawable/rectangle_2.xml" value="0.290625" />
+        <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/drawable/rectangle_3.xml" value="0.290625" />
+        <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/drawable/set_alarm.xml" value="0.290625" />
+        <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/layout/activity_alarm.xml" value="0.4" />
+        <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/layout/activity_focus.xml" value="0.4" />
+        <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/layout/activity_set_alarm.xml" value="0.264" />
+        <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/layout/activity_stopwatch.xml" value="0.4" />
+        <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/layout/activity_timer.xml" value="0.536" />
       </map>
     </option>
   </component>
