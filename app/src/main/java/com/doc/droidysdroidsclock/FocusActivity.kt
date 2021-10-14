@@ -19,24 +19,28 @@ class FocusActivity : AppCompatActivity() {
         clockTab.setOnClickListener {
             Intent(this, MainActivity::class.java).also {
                 startActivity(it)
+                overridePendingTransition(0, 0);
             }
         }
         val alarmTab: Button = findViewById(R.id.button2)
         alarmTab.setOnClickListener {
             Intent(this, AlarmActivity::class.java).also {
                 startActivity(it)
+                overridePendingTransition(0, 0);
             }
         }
         val stopwatchTab: Button = findViewById(R.id.button3)
         stopwatchTab.setOnClickListener {
             Intent(this, StopwatchActivity::class.java).also {
                 startActivity(it)
+                overridePendingTransition(0, 0);
             }
         }
         val timerTab: Button = findViewById(R.id.button4)
         timerTab.setOnClickListener {
             Intent(this, TimerActivity::class.java).also {
                 startActivity(it)
+                overridePendingTransition(0, 0);
             }
         }
 
