@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#812f33"
+    android:background="#5B1887"
     tools:context=".StopwatchActivity">
 
     <ImageButton
@@ -25,9 +25,7 @@
         android:layout_marginStart="283dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="114dp"
         android:background="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/union"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton12"
         app:layout_constraintTop_toTopOf="parent"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#812f33">
+    android:background="#5B1887">
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -404,13 +404,13 @@
     </ScrollView>
 
     <Button
-        android:theme="@style/btns"
         android:id="@+id/new_alm_btn"
         android:layout_width="150dp"
         android:layout_height="38dp"
         android:background="@drawable/rectangle_2"
         android:text="@string/new_alm"
         android:textAllCaps="false"
+        android:theme="@style/btns"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

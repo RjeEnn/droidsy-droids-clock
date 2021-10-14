@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#812f33">
+    android:background="#5B1887">
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -140,13 +140,13 @@
 
     <Button
         android:id="@+id/set_alm"
-        android:theme="@style/btns"
         android:layout_width="95dp"
         android:layout_height="38dp"
         android:background="@drawable/rectangle_3"
         android:fontFamily="@font/comfortaa_bold"
         android:text="@string/set"
         android:textAllCaps="false"
+        android:theme="@style/btns"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
