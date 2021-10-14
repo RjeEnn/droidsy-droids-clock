@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Droidys Droids Clock</string>
+    <string name="app_name">Droidsy Droids Clock</string>
+
+    <!-- Button Labels -->
+    <string name="clock_button">clock</string>
+    <string name="stopwatch_button">stopwatch</string>
+    <string name="timer_button">timer</string>
+    <string name="focus_button">focus</string>
+    <string name="alarm_button">alarm</string>
+
+    <string name="clock_button_ul"><b><u>clock</u></b></string>
+    <string name="stopwatch_button_ul"><b><u>stopwatch</u></b></string>
+    <string name="timer_button_ul"><b><u>timer</u></b></string>
+    <string name="focus_button_ul"><b><u>focus</u></b></string>
+    <string name="alarm_button_ul"><b><u>alarm</u></b></string>
 </resources>
