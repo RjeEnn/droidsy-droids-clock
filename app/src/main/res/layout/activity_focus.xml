@@ -43,7 +43,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/clock_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -56,7 +56,7 @@
             android:textSize="11sp" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/alarm_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -69,7 +69,7 @@
             android:textSize="11sp" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/stopwatch_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -83,7 +83,7 @@
             android:textSize="11sp" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/timer_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -96,7 +96,7 @@
             android:textSize="11sp" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/focus_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -123,12 +123,12 @@
         android:text="@string/work"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/editBrk1"
+        app:layout_constraintBottom_toTopOf="@+id/editShortBrkName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editBrk1"
+        android:id="@+id/editShortBrkName"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -139,12 +139,12 @@
         android:text="@string/brk1"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/editBrk2"
+        app:layout_constraintBottom_toTopOf="@+id/editLongBrkName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editWork" />
 
     <EditText
-        android:id="@+id/editBrk2"
+        android:id="@+id/editLongBrkName"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -157,7 +157,7 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editBrk1" />
+        app:layout_constraintTop_toBottomOf="@+id/editShortBrkName" />
 
     <TextView
         android:id="@+id/time_for_work"
@@ -169,13 +169,13 @@
         android:text="@string/wrk_time"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/time_for_break1"
+        app:layout_constraintBottom_toTopOf="@+id/time_for_short_break"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editWork"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/time_for_break2"
+        android:id="@+id/time_for_long_break"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="#721C1C1C"
@@ -186,11 +186,11 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editBrk2"
-        app:layout_constraintTop_toBottomOf="@+id/time_for_break1" />
+        app:layout_constraintStart_toEndOf="@+id/editLongBrkName"
+        app:layout_constraintTop_toBottomOf="@+id/time_for_short_break" />
 
     <TextView
-        android:id="@+id/time_for_break1"
+        android:id="@+id/time_for_short_break"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="#721C1C1C"
@@ -199,9 +199,9 @@
         android:text="@string/brk1_time"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/time_for_break2"
+        app:layout_constraintBottom_toTopOf="@+id/time_for_long_break"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editBrk1"
+        app:layout_constraintStart_toEndOf="@+id/editShortBrkName"
         app:layout_constraintTop_toBottomOf="@+id/time_for_work" />
 
     <ImageButton
@@ -211,19 +211,19 @@
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/sound_focus"
-        app:layout_constraintTop_toBottomOf="@+id/time_for_break2"
+        app:layout_constraintStart_toEndOf="@id/focus_sound"
+        app:layout_constraintTop_toBottomOf="@+id/time_for_long_break"
         app:srcCompat="@drawable/ic_begin_focus" />
 
     <ImageButton
-        android:id="@+id/sound_focus"
+        android:id="@+id/focus_sound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toStartOf="@+id/begin_focus"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editBrk2"
+        app:layout_constraintTop_toBottomOf="@+id/editLongBrkName"
         app:srcCompat="@drawable/ic_baseline_volume_off_24" />
 
     <TextView
@@ -235,7 +235,7 @@
         android:text="@string/work"
         android:textColor="#FFFFFF"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintBottom_toTopOf="@+id/time_remaining"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

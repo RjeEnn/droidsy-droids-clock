@@ -65,7 +65,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/clock_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -78,7 +78,7 @@
             android:textSize="11sp" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/alarm_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -91,7 +91,7 @@
             android:textSize="11sp" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/stopwatch_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -106,7 +106,7 @@
             android:textSize="13sp" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/timer_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -119,7 +119,7 @@
             android:textSize="11sp" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/focus_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

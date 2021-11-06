@@ -15,28 +15,28 @@ class TimerActivity : AppCompatActivity() {
         setContentView(R.layout.activity_timer)
 
         // BUTTONS
-        val clockTab: Button = findViewById(R.id.button)
+        val clockTab: Button = findViewById(R.id.clock_button)
         clockTab.setOnClickListener {
             Intent(this, MainActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(0, 0);
             }
         }
-        val alarmTab: Button = findViewById(R.id.button2)
+        val alarmTab: Button = findViewById(R.id.alarm_button)
         alarmTab.setOnClickListener {
             Intent(this, AlarmActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(0, 0);
             }
         }
-        val stopwatchTab: Button = findViewById(R.id.button3)
+        val stopwatchTab: Button = findViewById(R.id.stopwatch_button)
         stopwatchTab.setOnClickListener {
             Intent(this, StopwatchActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(0, 0);
             }
         }
-        val focusTab: Button = findViewById(R.id.button5)
+        val focusTab: Button = findViewById(R.id.focus_button)
         focusTab.setOnClickListener {
             Intent(this, FocusActivity::class.java).also {
                 startActivity(it)
