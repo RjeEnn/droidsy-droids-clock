@@ -24,6 +24,7 @@ class FocusActivity : AppCompatActivity() {
     private var timerState = TimerState.Stopped
     private var secondsRemaining: Long = 0
     private lateinit var timeRemaining: TextView
+    private lateinit var sessionLabel: TextView
     private var wrkMin: Int = 0
     private var wrkSec: Int = 0
     private var longMin: Int = 0
@@ -76,7 +77,7 @@ class FocusActivity : AppCompatActivity() {
         val editWrk: EditText = findViewById(R.id.editWork) //textfield that holds name of work session
         val editShortBrkName: EditText = findViewById(R.id.editShortBrkName) // textfield that holds name of short break
         val editLongBreakName: EditText = findViewById(R.id.editLongBrkName) // textfield that holds name of long break
-        val sessionLabel: TextView = findViewById(R.id.session_label) //text displaying if session is work or a break
+        sessionLabel = findViewById(R.id.session_label) //text displaying if session is work or a break
         timeRemaining  = findViewById(R.id.time_remaining) //countdown area
         val pauseBtn: ImageButton = findViewById(R.id.pause_focus) //pause the timer; when pressed, it changes to a play for resume
         val continueBtn: ImageButton = findViewById(R.id.continue_focus) //resume timer after pause
@@ -317,17 +318,21 @@ class FocusActivity : AppCompatActivity() {
                 if (count < 4) {
                     Log.i("FocusActivity","and short break is next")
                     sesh = "short"
+                    sessionLabel.text = "break"
                 } else {
                     Log.i("FocusActivity","and long break is next")
                     sesh = "long"
+                    sessionLabel.text = "break"
                 }
             } else {
                 Log.i("FocusActivity","and sesh is a break")
                 sesh = "work"
+                sessionLabel.text = "work"
             }
         }else{
             Log.i("FocusActivity","by cancel button")
             sesh = "work"
+            sessionLabel.text = "work"
         }
         setNewTimerLength()
         //progress_countdown.progress = 0
