@@ -49,7 +49,7 @@
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:layout_marginBottom="25dp"
-        android:background="@drawable/ic_union"
+        android:background="@drawable/ic_timer_spin"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
