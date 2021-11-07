@@ -7,6 +7,33 @@
     android:background="#5B1887"
     tools:context=".FocusActivity">
 
+    <NumberPicker
+        android:id="@+id/wrk_sec"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:theme="@style/pickerT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton9"
+        tools:ignore="MissingConstraints" />
+
+    <NumberPicker
+        android:id="@+id/wrk_min"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="132dp"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:theme="@style/pickerT"
+        app:layout_constraintEnd_toStartOf="@+id/wrk_sec"
+        app:layout_constraintHorizontal_bias="0.784"
+        app:layout_constraintStart_toEndOf="@+id/editWork"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
     <ImageButton
         android:id="@+id/imageButton8"
         android:layout_width="48dp"
@@ -27,9 +54,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="114dp"
         android:background="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/union"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton12"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_palette_24" />
 
@@ -159,60 +184,73 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editShortBrkName" />
 
-    <TextView
-        android:id="@+id/time_for_work"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="#721C1C1C"
-        android:fontFamily="@font/comfortaa_bold"
-        android:gravity="center"
-        android:text="@string/wrk_time"
+    <NumberPicker
+        android:id="@+id/short_sec"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="16dp"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/time_for_short_break"
+        android:theme="@style/pickerT"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editWork"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/wrk_sec"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/time_for_long_break"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="#721C1C1C"
-        android:fontFamily="@font/comfortaa_bold"
-        android:gravity="center"
-        android:text="@string/brk2_time"
+    <NumberPicker
+        android:id="@+id/long_min"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="132dp"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:theme="@style/pickerT"
+        app:layout_constraintBottom_toTopOf="@+id/begin_focus"
+        app:layout_constraintEnd_toStartOf="@+id/long_sec"
+        app:layout_constraintHorizontal_bias="0.784"
         app:layout_constraintStart_toEndOf="@+id/editLongBrkName"
-        app:layout_constraintTop_toBottomOf="@+id/time_for_short_break" />
+        app:layout_constraintTop_toBottomOf="@+id/short_min"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/time_for_short_break"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="#721C1C1C"
-        android:fontFamily="@font/comfortaa_bold"
-        android:gravity="center"
-        android:text="@string/brk1_time"
+    <NumberPicker
+        android:id="@+id/long_sec"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="16dp"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/time_for_long_break"
+        android:theme="@style/pickerT"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/short_sec"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
+    <NumberPicker
+        android:id="@+id/short_min"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="108dp"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:theme="@style/pickerT"
+        app:layout_constraintEnd_toStartOf="@+id/short_sec"
+        app:layout_constraintHorizontal_bias="0.784"
         app:layout_constraintStart_toEndOf="@+id/editShortBrkName"
-        app:layout_constraintTop_toBottomOf="@+id/time_for_work" />
+        app:layout_constraintTop_toBottomOf="@+id/wrk_min"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
         android:id="@+id/begin_focus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/focus_sound"
-        app:layout_constraintTop_toBottomOf="@+id/time_for_long_break"
         app:srcCompat="@drawable/ic_begin_focus" />
 
     <ImageButton
@@ -274,6 +312,19 @@
         app:layout_constraintStart_toEndOf="@+id/sound_on_focus"
         app:layout_constraintTop_toBottomOf="@+id/time_remaining"
         app:srcCompat="@drawable/ic_baseline_pause_24" />
+
+    <ImageButton
+        android:id="@+id/continue_focus"
+        android:layout_width="76dp"
+        android:layout_height="71dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.134"
+        app:layout_constraintStart_toEndOf="@+id/cancel_focus"
+        app:layout_constraintTop_toBottomOf="@+id/time_remaining"
+        app:layout_constraintVertical_bias="0.492"
+        app:srcCompat="@drawable/ic_baseline_play_24" />
 
     <ImageButton
         android:id="@+id/cancel_focus"

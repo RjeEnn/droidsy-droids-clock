@@ -2,14 +2,16 @@ package com.doc.droidysdroidsclock.util
 
 import android.content.Context
 import android.preference.PreferenceManager
+import android.widget.EditText
+import android.widget.NumberPicker
 import com.doc.droidysdroidsclock.FocusActivity
 import java.security.AccessControlContext
 import java.sql.Time
 
 class PrefUtil {
     companion object{
-        fun getTimerLength(context: Context): Int{
-            return 1
+        fun getTimerLength(context: Context, min: NumberPicker, sec: NumberPicker): Long{
+            return min.getValue().toLong() + sec.getValue()/60
         }
 
         private const val PREVIOUS_TIMER_LENGTH_SECONDS_ID = "com.doc.droidysdroidsclock.FocusActivity.previous_timer_length"
