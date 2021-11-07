@@ -24,17 +24,18 @@ class FocusActivity : AppCompatActivity() {
     private var timerState = TimerState.Stopped
     private var secondsRemaining: Long = 0
     private lateinit var timeRemaining: TextView
-    private lateinit var editWrkMin: NumberPicker
-    private lateinit var editWrkSec: NumberPicker
-    private lateinit var editLongMin: NumberPicker
-    private lateinit var editLongSec: NumberPicker
-    private lateinit var editShortMin: NumberPicker
-    private lateinit var editShortSec: NumberPicker
+    private var wrkMin: Int = 0
+    private var wrkSec: Int = 0
+    private var longMin: Int = 0
+    private var longSec: Int = 0
+    private var shortMin: Int = 0
+    private var shortSec: Int = 0
     private var sesh: String = "work"
     private var count: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("FocusActivity","created")
         setContentView(R.layout.activity_focus)
 
         /*
@@ -83,48 +84,48 @@ class FocusActivity : AppCompatActivity() {
         val muteBtn: ImageButton = findViewById(R.id.focus_sound) //mute music?
         val cancelFocus: ImageButton = findViewById(R.id.cancel_focus) //cancel session
         val beginFocus: ImageButton = findViewById(R.id.begin_focus) //start focus
-        editWrkMin = findViewById(R.id.wrk_min) //number of minutes for work countdowm
-        editWrkSec = findViewById(R.id.wrk_sec) //number of minutes for work countdowm
-        editLongMin = findViewById(R.id.long_min) //number of minutes for work countdowm
-        editLongSec = findViewById(R.id.long_sec) //number of minutes for work countdowm
-        editShortMin = findViewById(R.id.short_min) //number of minutes for work countdowm
-        editShortSec = findViewById(R.id.short_sec) //number of minutes for work countdowm
+        val editWrkMin: NumberPicker = findViewById(R.id.wrk_min) //number of minutes for work countdowm
+        val editWrkSec: NumberPicker = findViewById(R.id.wrk_sec) //number of minutes for work countdowm
+        val editLongMin: NumberPicker = findViewById(R.id.long_min) //number of minutes for work countdowm
+        val editLongSec: NumberPicker = findViewById(R.id.long_sec) //number of minutes for work countdowm
+        val editShortMin: NumberPicker = findViewById(R.id.short_min) //number of minutes for work countdowm
+        val editShortSec: NumberPicker = findViewById(R.id.short_sec) //number of minutes for work countdowm
 
         if (editWrkMin != null) {
             editWrkMin.minValue = 0
             editWrkMin.maxValue = 59
             editWrkMin.wrapSelectorWheel = true
-        }
+        }else{Log.i("FocusActivity","editWrkMin not created")}
 
         if (editWrkSec != null) {
             editWrkSec.minValue = 0
             editWrkSec.maxValue = 59
             editWrkSec.wrapSelectorWheel = true
-        }
+        }else{Log.i("FocusActivity","editWrkSec not created")}
 
         if (editLongMin != null) {
             editLongMin.minValue = 0
             editLongMin.maxValue = 59
             editLongMin.wrapSelectorWheel = true
-        }
+        }else{Log.i("FocusActivity","editLongMin not created")}
 
         if (editLongSec != null) {
             editLongSec.minValue = 0
             editLongSec.maxValue = 59
             editLongSec.wrapSelectorWheel = true
-        }
+        }else{Log.i("FocusActivity","editLongSec not created")}
 
         if (editShortMin != null) {
             editShortSec.minValue = 0
             editShortSec.maxValue = 59
             editShortSec.wrapSelectorWheel = true
-        }
+        }else{Log.i("FocusActivity","editShortMin not created")}
 
         if (editShortSec != null) {
             editShortSec.minValue = 0
             editShortSec.maxValue = 59
             editShortSec.wrapSelectorWheel = true
-        }
+        }else{Log.i("FocusActivity","editShortSec not created")}
 
 
         //view 1
@@ -144,27 +145,53 @@ class FocusActivity : AppCompatActivity() {
          */
         beginFocus.setOnClickListener {
             Log.i("FocusActivity","begin was clicked")
-            //view 2
-            sessionLabel.visibility = View.VISIBLE
-            timeRemaining.visibility = View.VISIBLE
-            pauseBtn.visibility = View.VISIBLE
-            soundOnBtn.visibility = View.VISIBLE
-            cancelFocus.visibility = View.VISIBLE
-            startTimer()
-            timerState = TimerState.Started
+            /*Log.i("FocusActivity", "wrkMin: ${editWrkMin.value}")
+            Log.i("FocusActivity", "wrkSec: ${editWrkSec.value}")
+            Log.i("FocusActivity", "longMin: ${editLongMin.value}")
+            Log.i("FocusActivity", "longSec: ${editLongSec.value}")
+            Log.i("FocusActivity", "shortMin: ${editShortMin.value}")
+            Log.i("FocusActivity", "shortSec: ${editShortSec.value}")*/
 
-            //remove unnecessary items that were in view 1
-            editWrk.visibility = View.GONE
-            editShortBrkName.visibility = View.GONE
-            editLongBreakName.visibility = View.GONE
-            beginFocus.visibility = View.GONE
-            muteBtn.visibility = View.GONE
-            editWrkMin.visibility = View.GONE
-            editWrkSec.visibility = View.GONE
-            editLongMin.visibility = View.GONE
-            editLongSec.visibility = View.GONE
-            editShortMin.visibility = View.GONE
-            editShortSec.visibility = View.GONE
+            if ((editWrkMin.value != 0) or (editWrkSec.value != 0 )) {
+                wrkMin = editWrkMin.value
+                wrkSec = editWrkSec.value
+                longMin = editLongMin.value
+                longSec = editLongSec.value
+                shortMin = editShortMin.value
+                shortSec  = editShortSec.value
+
+                Log.i("FocusActivity","wrkMin $wrkMin")
+                Log.i("FocusActivity","wrkSec $wrkSec")
+                Log.i("FocusActivity","longMin $longMin")
+                Log.i("FocusActivity","longSec $longSec")
+                Log.i("FocusActivity","shortMin $shortMin")
+                Log.i("FocusActivity","shortSec $shortSec")
+
+
+                //view 2
+                sessionLabel.visibility = View.VISIBLE
+                timeRemaining.visibility = View.VISIBLE
+                pauseBtn.visibility = View.VISIBLE
+                soundOnBtn.visibility = View.VISIBLE
+                cancelFocus.visibility = View.VISIBLE
+                setNewTimerLength()
+                secondsRemaining = timerLengthSeconds
+                startTimer()
+                timerState = TimerState.Started
+
+                //remove unnecessary items that were in view 1
+                editWrk.visibility = View.GONE
+                editShortBrkName.visibility = View.GONE
+                editLongBreakName.visibility = View.GONE
+                beginFocus.visibility = View.GONE
+                muteBtn.visibility = View.GONE
+                editWrkMin.visibility = View.GONE
+                editWrkSec.visibility = View.GONE
+                editLongMin.visibility = View.GONE
+                editLongSec.visibility = View.GONE
+                editShortMin.visibility = View.GONE
+                editShortSec.visibility = View.GONE
+            }
         }
 
         /*
@@ -275,9 +302,6 @@ class FocusActivity : AppCompatActivity() {
              timerLengthSeconds
         }
 
-        if (timerState == TimerState.Started)
-            startTimer()
-
         //updateButtons()
         updateCountdownUI()
     }
@@ -310,7 +334,7 @@ class FocusActivity : AppCompatActivity() {
 
         PrefUtil.setSecondsRemaining(timerLengthSeconds, this)
         secondsRemaining = timerLengthSeconds
-        Log.i("FocusActivity","secondsRemaining changed in onFinish: $secondsRemaining")
+        Log.i("FocusActivity","secondsRemaining changed in onTimerFinished: $secondsRemaining")
 
         //updateButtons()
         updateCountdownUI()
@@ -336,18 +360,18 @@ class FocusActivity : AppCompatActivity() {
 
     private fun setNewTimerLength(){
         Log.i("FocusActivity","setNewTimerLength called")
-        val lengthInMinutes: Long
+        val lengthInMinutes: Double
         if (sesh.equals("work")){
             Log.i("FocusActivity","sesh is work in setNewTimerLength function")
-            lengthInMinutes = com.doc.droidysdroidsclock.util.PrefUtil.getTimerLength(this, editWrkMin, editWrkSec)
+            lengthInMinutes = com.doc.droidysdroidsclock.util.PrefUtil.getTimerLength(this, wrkMin, wrkSec)
         } else if (sesh.equals("long")){
             Log.i("FocusActivity","sesh is long in setNewTimerLength function")
-            lengthInMinutes = com.doc.droidysdroidsclock.util.PrefUtil.getTimerLength(this, editLongMin, editLongSec)
+            lengthInMinutes = com.doc.droidysdroidsclock.util.PrefUtil.getTimerLength(this, longMin, longSec)
         } else {
             Log.i("FocusActivity","sesh is short in setNetTimerLength function")
-            lengthInMinutes = com.doc.droidysdroidsclock.util.PrefUtil.getTimerLength(this, editShortMin, editShortSec)
+            lengthInMinutes = com.doc.droidysdroidsclock.util.PrefUtil.getTimerLength(this, shortMin, shortSec)
             }
-        timerLengthSeconds = (lengthInMinutes * 60L)
+        timerLengthSeconds = (lengthInMinutes * 60).toLong()
         //progress_countdown.max = timerLengthSeconds.toInt()
     }
 
@@ -358,7 +382,6 @@ class FocusActivity : AppCompatActivity() {
     }
 
     private fun updateCountdownUI(){
-        Log.i("FocusActivity","updateCountdownUI called")
         val minutesUntilFinished = secondsRemaining/60
         val secondsInMinuteUntilFinished = secondsRemaining - minutesUntilFinished *60
         val secondsStr = secondsInMinuteUntilFinished.toString()
