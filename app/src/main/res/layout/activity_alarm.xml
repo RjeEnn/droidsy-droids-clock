@@ -346,7 +346,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/alarm5"
                 android:layout_width="280dp"
-                android:layout_height="100dp"
+                android:layout_height="84dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/rectangle_1"
