@@ -117,8 +117,8 @@ class FocusActivity : AppCompatActivity() {
         }else{Log.i("FocusActivity","editLongSec not created")}
 
         if (editShortMin != null) {
-            editShortSec.minValue = 0
-            editShortSec.maxValue = 59
+            editShortMin.minValue = 0
+            editShortMin.maxValue = 59
             editShortSec.wrapSelectorWheel = true
         }else{Log.i("FocusActivity","editShortMin not created")}
 
@@ -318,21 +318,21 @@ class FocusActivity : AppCompatActivity() {
                 if (count < 4) {
                     Log.i("FocusActivity","and short break is next")
                     sesh = "short"
-                    sessionLabel.text = "break"
+                    sessionLabel.text = "@string/brk1"
                 } else {
                     Log.i("FocusActivity","and long break is next")
                     sesh = "long"
-                    sessionLabel.text = "break"
+                    sessionLabel.text = "@string/brk1"
                 }
             } else {
                 Log.i("FocusActivity","and sesh is a break")
                 sesh = "work"
-                sessionLabel.text = "work"
+                sessionLabel.text = "@string/work"
             }
         }else{
             Log.i("FocusActivity","by cancel button")
             sesh = "work"
-            sessionLabel.text = "work"
+            sessionLabel.text = "@string/brk1work"
         }
         setNewTimerLength()
         //progress_countdown.progress = 0
