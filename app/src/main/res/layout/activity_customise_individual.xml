@@ -7,4 +7,20 @@
     android:background="#2999AD"
     tools:context=".CustomiseActivity">
 
+    <Button
+        android:id="@+id/begin_focus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comfortaa_bold"
+        android:minWidth="100dp"
+        android:text="@string/set_colour_button_ul"
+        android:textFontWeight="5"
+        android:textSize="13sp"
+        android:background="@drawable/set_colour_button_style"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="587dp"
+        tools:ignore="MissingConstraints" />
+
+    
+
 </androidx.constraintlayout.widget.ConstraintLayout>

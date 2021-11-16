@@ -45,4 +45,8 @@
     <string name="work">work</string>
     <string name="brk1">short break</string>
     <string name="brk2">long break</string>
+
+
+    <string name="set_colour_button_ul"><b><u>set colour</u></b></string>
+    <string name="start_colour"><b><u>#574BCD</u></b></string>
 </resources>
