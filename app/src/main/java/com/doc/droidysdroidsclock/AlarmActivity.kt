@@ -90,6 +90,12 @@ class AlarmActivity: AppCompatActivity() {
         a1Switch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 ringtone.play()
+
+                val intent = Intent(applicationContext, AlarmNotification::class.java)
+                val pendingIntent = PendingIntent.getBroadcast(applicationContext, 111, intent, 0)
+                val alarmManager: AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+                alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 5000, pendingIntent)
+
                 Toast.makeText(this, "Alarm Enabled", Toast.LENGTH_SHORT).show()
             } else {
                 ringtone.stop()
@@ -104,7 +110,7 @@ class AlarmActivity: AppCompatActivity() {
                 Toast.makeText(this, "Alarm Enabled", Toast.LENGTH_SHORT).show()
             } else {
                 //ringtone.stop()
-                Toast.makeText(this,"Disabled!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Alarm Disabled!", Toast.LENGTH_SHORT).show()
             }
         }
 
