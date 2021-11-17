@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.doc.droidysdroidsclock">
 
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,22 +11,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DroidysDroidsClock">
+        <receiver
+            android:name=".TimerNotifReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="start"/>
+                <action android:name="stop"/>
+                <action android:name="pause"/>
+                <action android:name="resume"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".TimerFinishedReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
         <activity
             android:name=".SetAlarmActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:launchMode="singleTop" />
         <activity
             android:name=".FocusActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:launchMode="singleTop" />
         <activity
             android:name=".TimerActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:launchMode="singleTop" />
         <activity
             android:name=".StopwatchActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:launchMode="singleTop" />
         <activity android:name=".AlarmActivity" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +55,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".StopwatchService"/>
+        <service android:name=".StopwatchService" />
 
         <meta-data
             android:name="preloaded_fonts"

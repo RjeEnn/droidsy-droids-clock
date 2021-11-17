@@ -66,10 +66,9 @@ class StopwatchActivity : AppCompatActivity() {
 
         val anim = ObjectAnimator.ofFloat(union, "rotation", 0f, 360f)
 
-        anim.duration = 60000
+        anim.duration = 1000
         anim.repeatCount = Animation.INFINITE
         anim.repeatMode = ObjectAnimator.RESTART
-        anim.interpolator = LinearInterpolator()
 
         startBtn.setOnClickListener {
             startBtn.visibility = View.GONE
@@ -165,7 +164,7 @@ class StopwatchActivity : AppCompatActivity() {
         super.onStop()
 
         val prefs: SharedPreferences = getSharedPreferences("prefs", MODE_PRIVATE)
-        val editor :SharedPreferences.Editor = prefs.edit()
+        val editor: SharedPreferences.Editor = prefs.edit()
 
         editor.putBoolean("stopped", stopped)
         editor.putBoolean("paused", paused)
