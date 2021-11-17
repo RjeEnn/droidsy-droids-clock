@@ -32,17 +32,23 @@ class StopwatchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stopwatch)
 
-        val cl = findViewById<ConstraintLayout>(R.id.stopwatch_page)
-        when {
-            Mutables.stopwatch === "gradient1" -> {
-                cl.setBackgroundResource(R.drawable.gradient1)
-            }
-            Mutables.stopwatch === "gradient2" -> {
-                cl.setBackgroundResource(R.drawable.gradient2)
-            }
-            else -> {
-                cl.setBackgroundResource(R.drawable.gradient3)
-            }
+        val cl = findViewById(R.id.stopwatch_page) as ConstraintLayout
+        if (Mutables.stopwatch === "gradient1") {
+            cl.setBackgroundResource(R.drawable.gradient1)
+        } else if (Mutables.stopwatch === "gradient2") {
+            cl.setBackgroundResource(R.drawable.gradient2)
+        } else if (Mutables.stopwatch === "gradient3") {
+            cl.setBackgroundResource(R.drawable.gradient3)
+        } else if (Mutables.stopwatch === "gradient4") {
+            cl.setBackgroundResource(R.drawable.gradient4)
+        } else if (Mutables.stopwatch === "gradient5") {
+            cl.setBackgroundResource(R.drawable.gradient5)
+        } else if (Mutables.stopwatch === "gradient6") {
+            cl.setBackgroundResource(R.drawable.gradient6)
+        } else if (Mutables.stopwatch === "gradient7") {
+            cl.setBackgroundResource(R.drawable.gradient7)
+        }else {
+            cl.setBackgroundResource(R.drawable.gradient8)
         }
 
         // BUTTONS
@@ -96,18 +102,25 @@ class StopwatchActivity : AppCompatActivity() {
         }
 
         val worldClockTab: Button = findViewById(R.id.world_clock_button)
+        worldClockTab.setOnClickListener {
+            Intent(this, WorldClockActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(0, 0)
+            }
+        }
+
         if (!Mutables.showAlarm) { alarmTab.visibility = View.GONE }
         if (!Mutables.showTimer) { timerTab.visibility = View.GONE }
         if (!Mutables.showFocus) { focusTab.visibility = View.GONE }
         if (!Mutables.showWorldClock) { worldClockTab.visibility = View.GONE }
 
-        fun startAlarm(){
+        fun startAlarmActivity(){
             Intent(this, AlarmActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(0, 0)
             }
         }
-        fun startTimer(){
+        fun startTimerActivity(){
             Intent(this, TimerActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(0, 0)
@@ -125,10 +138,10 @@ class StopwatchActivity : AppCompatActivity() {
                     y2 = m.y
                     if (x1 < x2) {
                         //swiped right
-                        startAlarm()
+                        startAlarmActivity()
                     }else if (x1 > x2) {
                         //swiped left
-                        startTimer()
+                        startTimerActivity()
                     }
                 }
                 return false

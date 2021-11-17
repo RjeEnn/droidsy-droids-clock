@@ -49,6 +49,10 @@
             android:name=".StopwatchActivity"
             android:exported="true"
             android:launchMode="singleTop" />
+            android:exported="true" />
+        <activity
+            android:name=".WorldClockActivity"
+            android:exported="true" />
         <activity android:name=".AlarmActivity" />
         <activity
             android:name=".MainActivity"

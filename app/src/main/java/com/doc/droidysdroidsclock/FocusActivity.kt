@@ -57,8 +57,18 @@ class FocusActivity : AppCompatActivity() {
             cl.setBackgroundResource(R.drawable.gradient1)
         } else if (Mutables.focus === "gradient2") {
             cl.setBackgroundResource(R.drawable.gradient2)
-        }else {
+        } else if (Mutables.focus === "gradient3") {
             cl.setBackgroundResource(R.drawable.gradient3)
+        } else if (Mutables.focus === "gradient4") {
+            cl.setBackgroundResource(R.drawable.gradient4)
+        } else if (Mutables.focus === "gradient5") {
+            cl.setBackgroundResource(R.drawable.gradient5)
+        } else if (Mutables.focus === "gradient6") {
+            cl.setBackgroundResource(R.drawable.gradient6)
+        } else if (Mutables.focus === "gradient7") {
+            cl.setBackgroundResource(R.drawable.gradient7)
+        }else {
+            cl.setBackgroundResource(R.drawable.gradient8)
         }
 
         if (Mutables.focusTone === "lync_ringtone5") {
@@ -120,6 +130,13 @@ class FocusActivity : AppCompatActivity() {
         }
 
         val worldClockTab: Button = findViewById(R.id.world_clock_button)
+        worldClockTab.setOnClickListener {
+            Intent(this, WorldClockActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(0, 0)
+            }
+        }
+
         if (!Mutables.showAlarm) { alarmTab.visibility = View.GONE }
         if (!Mutables.showStopwatch) { stopwatchTab.visibility = View.GONE }
         if (!Mutables.showTimer) { timerTab.visibility = View.GONE }
@@ -283,7 +300,9 @@ class FocusActivity : AppCompatActivity() {
             Log.i("FocusActivity", "shortMin: ${editShortMin.value}")
             Log.i("FocusActivity", "shortSec: ${editShortSec.value}")*/
 
-            if ((editWrkMin.value != 0) or (editWrkSec.value != 0 )) {
+            if ( ((editWrkMin.value != 0) or (editWrkSec.value != 0 ))
+                    and ((editLongMin.value != 0) or (editLongSec.value != 0 ))
+                    and ((editShortMin.value != 0) or (editShortSec.value != 0 )) ) {
                 wrkMin = editWrkMin.value
                 wrkSec = editWrkSec.value
                 longMin = editLongMin.value

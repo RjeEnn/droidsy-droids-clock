@@ -21,8 +21,18 @@ class SetAlarmActivity: AppCompatActivity() {
             cl.setBackgroundResource(R.drawable.gradient1)
         } else if (Mutables.set_alarm === "gradient2") {
             cl.setBackgroundResource(R.drawable.gradient2)
-        }else {
+        } else if (Mutables.set_alarm === "gradient3") {
             cl.setBackgroundResource(R.drawable.gradient3)
+        } else if (Mutables.set_alarm === "gradient4") {
+            cl.setBackgroundResource(R.drawable.gradient4)
+        } else if (Mutables.set_alarm === "gradient5") {
+            cl.setBackgroundResource(R.drawable.gradient5)
+        } else if (Mutables.set_alarm === "gradient6") {
+            cl.setBackgroundResource(R.drawable.gradient6)
+        } else if (Mutables.set_alarm === "gradient7") {
+            cl.setBackgroundResource(R.drawable.gradient7)
+        }else {
+            cl.setBackgroundResource(R.drawable.gradient8)
         }
 
         val clockTab: Button = findViewById(R.id.clock_button)
@@ -73,6 +83,13 @@ class SetAlarmActivity: AppCompatActivity() {
         }
 
         val worldClockTab: Button = findViewById(R.id.world_clock_button)
+        worldClockTab.setOnClickListener {
+            Intent(this, WorldClockActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(0, 0)
+            }
+        }
+
         if (!Mutables.showStopwatch) { stopwatchTab.visibility = View.GONE }
         if (!Mutables.showTimer) { timerTab.visibility = View.GONE }
         if (!Mutables.showFocus) { focusTab.visibility = View.GONE }

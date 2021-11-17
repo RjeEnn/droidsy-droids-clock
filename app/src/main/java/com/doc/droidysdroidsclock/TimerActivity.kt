@@ -70,8 +70,18 @@ class TimerActivity : AppCompatActivity() {
             cl.setBackgroundResource(R.drawable.gradient1)
         } else if (Mutables.timer === "gradient2") {
             cl.setBackgroundResource(R.drawable.gradient2)
-        }else {
+        } else if (Mutables.timer === "gradient3") {
             cl.setBackgroundResource(R.drawable.gradient3)
+        } else if (Mutables.timer === "gradient4") {
+            cl.setBackgroundResource(R.drawable.gradient4)
+        } else if (Mutables.timer === "gradient5") {
+            cl.setBackgroundResource(R.drawable.gradient5)
+        } else if (Mutables.timer === "gradient6") {
+            cl.setBackgroundResource(R.drawable.gradient6)
+        } else if (Mutables.timer === "gradient7") {
+            cl.setBackgroundResource(R.drawable.gradient7)
+        }else {
+            cl.setBackgroundResource(R.drawable.gradient8)
         }
 
         // BUTTONS
@@ -122,18 +132,25 @@ class TimerActivity : AppCompatActivity() {
         }
 
         val worldClockTab: Button = findViewById(R.id.world_clock_button)
+        worldClockTab.setOnClickListener {
+            Intent(this, WorldClockActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(0, 0)
+            }
+        }
+
         if (!Mutables.showAlarm) { alarmTab.visibility = View.GONE }
         if (!Mutables.showStopwatch) { stopwatchTab.visibility = View.GONE }
         if (!Mutables.showFocus) { focusTab.visibility = View.GONE }
         if (!Mutables.showWorldClock) { worldClockTab.visibility = View.GONE }
 
-        fun startStopwatch(){
+        fun startStopwatchActivity(){
             Intent(this, StopwatchActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(0, 0)
             }
         }
-        fun startFocus(){
+        fun startFocusActivity(){
             Intent(this, FocusActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(0, 0)
@@ -151,10 +168,10 @@ class TimerActivity : AppCompatActivity() {
                     y2 = m.y
                     if (x1 < x2) {
                         //swiped right
-                        startStopwatch()
+                        startStopwatchActivity()
                     }else if (x1 > x2) {
                         //swiped left
-                        startFocus()
+                        startFocusActivity()
                     }
                 }
                 return false

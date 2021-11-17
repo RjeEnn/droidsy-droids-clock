@@ -3,9 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/drawable/ellipse_1.xml" value="0.2203125" />
         <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/drawable/gradient.xml" value="0.11666666666666667" />
+        <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/drawable/gradient1.xml" value="0.2203125" />
         <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/drawable/gradient2.xml" value="0.2203125" />
         <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/drawable/gradient3.xml" value="0.2203125" />
+        <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/drawable/gradient4.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/drawable/gradient5.xml" value="0.2203125" />
+        <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/drawable/gradient6.xml" value="0.2203125" />
+        <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/drawable/gradient7.xml" value="0.2203125" />
+        <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/drawable/gradient8.xml" value="0.2203125" />
         <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/drawable/ic_baseline_pause_24.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/drawable/ic_baseline_play_24.xml" value="0.2203125" />
         <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/drawable/ic_baseline_volume_off_24.xml" value="0.2203125" />
@@ -22,6 +29,7 @@
         <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/layout/activity_settings.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/layout/activity_stopwatch.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/layout/activity_timer.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/kellm/Documents/GitHub/droidsy-droids-clock/app/src/main/res/layout/activity_world_clock.xml" value="0.16" />
         <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/drawable/backgroundgradient.xml" value="0.290625" />
         <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.290625" />
         <entry key="..\:/Users/rojae/Documents/DroidysDroidsClock/app/src/main/res/drawable/polygon_1.xml" value="0.290625" />

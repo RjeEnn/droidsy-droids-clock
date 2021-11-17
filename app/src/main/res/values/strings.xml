@@ -7,6 +7,7 @@
     <string name="timer_button">timer</string>
     <string name="focus_button">focus</string>
     <string name="alarm_button">alarm</string>
+    <string name="worldclock_button">world clock</string>
 
     <string name="clock_button_ul"><b><u>clock</u></b></string>
     <string name="stopwatch_button_ul"><b><u>stopwatch</u></b></string>

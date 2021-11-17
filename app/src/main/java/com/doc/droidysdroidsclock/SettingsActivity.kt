@@ -21,8 +21,18 @@ class SettingsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
             cl.setBackgroundResource(R.drawable.gradient1)
         } else if (Mutables.customise === "gradient2") {
             cl.setBackgroundResource(R.drawable.gradient2)
-        }else {
+        } else if (Mutables.customise === "gradient3") {
             cl.setBackgroundResource(R.drawable.gradient3)
+        } else if (Mutables.customise === "gradient4") {
+            cl.setBackgroundResource(R.drawable.gradient4)
+        } else if (Mutables.customise === "gradient5") {
+            cl.setBackgroundResource(R.drawable.gradient5)
+        } else if (Mutables.customise === "gradient6") {
+            cl.setBackgroundResource(R.drawable.gradient6)
+        } else if (Mutables.customise === "gradient7") {
+            cl.setBackgroundResource(R.drawable.gradient7)
+        }else {
+            cl.setBackgroundResource(R.drawable.gradient8)
         }
 
         var list_of_items = arrayOf("lync_ringtone5", "lync_ringtone6", "lync_videoadded")
@@ -32,6 +42,7 @@ class SettingsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         // Set Adapter to Spinner
         dropdown.adapter = aa
+        dropdown.setSelection(list_of_items.indexOf(Mutables.alarmTone))
         dropdown.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parentView: AdapterView<*>?,selectedItemView: View,position: Int, id: Long
             ) {
@@ -55,6 +66,7 @@ class SettingsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         aa2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         // Set Adapter to Spinner
         dropdown2.adapter = aa2
+        dropdown2.setSelection(list_of_items.indexOf(Mutables.focusTone))
         dropdown2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parentView: AdapterView<*>?,selectedItemView: View,position: Int, id: Long
             ) {
@@ -79,6 +91,11 @@ class SettingsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         val focusCheck: CheckBox = findViewById(R.id.focusCheckBox)
         val worldClockCheck: CheckBox = findViewById(R.id.world_clockCheckBox)
 
+        alarmCheck.isChecked = Mutables.showAlarm
+        stopwatchCheck.isChecked = Mutables.showStopwatch
+        timerCheck.isChecked = Mutables.showTimer
+        focusCheck.isChecked = Mutables.showFocus
+        worldClockCheck.isChecked = Mutables.showWorldClock
 
         val cancelBtn: Button = findViewById(R.id.cancel_button)
         cancelBtn.setOnClickListener {
@@ -119,13 +136,18 @@ class SettingsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
                         overridePendingTransition(0, 0)
                     }
                 }
+                Mutables.previousPage === "WorldClockActivity" -> {
+                    android.content.Intent(this, com.doc.droidysdroidsclock.WorldClockActivity::class.java).also {
+                        startActivity(it)
+                        overridePendingTransition(0, 0)
+                    }
+                }
             }
         }
 
 
         val saveBtn: Button = findViewById(R.id.save_button)
         saveBtn.setOnClickListener {
-            Mutables.showWorldClock = worldClockCheck.isChecked
             if (alarmCheck.isChecked){
                 Mutables.showAlarm = true
             }else{
@@ -162,6 +184,15 @@ class SettingsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
                     Mutables.showFocus = false
                 }
             }
+            if (worldClockCheck.isChecked){
+                Mutables.showWorldClock = true
+            }else{
+                if (Mutables.previousPage === "WorldClockActivity"){
+                    worldClockCheck.isChecked = true
+                }else {
+                    Mutables.showWorldClock = false
+                }
+            }
 
             when {
                 Mutables.previousPage === "MainActivity" -> {
@@ -196,6 +227,12 @@ class SettingsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
                 }
                 Mutables.previousPage === "SetAlarmActivity" -> {
                     Intent(this, SetAlarmActivity::class.java).also {
+                        startActivity(it)
+                        overridePendingTransition(0, 0)
+                    }
+                }
+                Mutables.previousPage === "WorldClockActivity" -> {
+                    android.content.Intent(this, com.doc.droidysdroidsclock.WorldClockActivity::class.java).also {
                         startActivity(it)
                         overridePendingTransition(0, 0)
                     }
