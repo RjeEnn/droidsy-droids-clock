@@ -12,6 +12,7 @@ class Mutables {
         var brk1 = "short break"
         var brk2 = "long break"
         var back = "#FFFFFF"
+        var previousPage = ""
 
     }
 }

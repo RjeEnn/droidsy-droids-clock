@@ -74,8 +74,9 @@ class FocusActivity : AppCompatActivity() {
             }
         }
 
-        val customiseBtn: ImageButton = findViewById(R.id.imageButton4)
+        val customiseBtn: ImageButton = findViewById(R.id.customise_button)
         customiseBtn.setOnClickListener {
+            Mutables.previousPage = "FocusActivity";
             Intent(this, CustomiseActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(0, 0);

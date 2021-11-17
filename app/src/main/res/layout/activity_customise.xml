@@ -4,11 +4,127 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@drawable/gradient1"
+    android:id="@+id/customise_page"
     tools:context=".CustomiseActivity">
 
+    <TextView
+        android:id="@+id/page_title"
+        android:layout_width="129dp"
+        android:layout_height="42dp"
+        android:textSize="25sp"
+        android:textFontWeight="900"
+        android:text="@string/customise"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="33dp" />
 
+    <TextView
+        android:id="@+id/themeIdentifier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/theme"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="171dp" />
 
+    <TextView
+        android:id="@+id/apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/apply"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="294dp" />
 
+    <Spinner
+        android:id="@+id/theme_spinner"
+        android:layout_width="240dp"
+        android:layout_height="46dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="161dp"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/allCheckBox"
+        android:layout_width="185dp"
+        android:layout_height="42dp"
+        android:text="@string/all_checkbox"
+        android:background="#FFFFFF"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="280dp" />
+
+    <CheckBox
+        android:id="@+id/clockCheckBox"
+        android:layout_width="185dp"
+        android:layout_height="42dp"
+        android:background="#FFFFFF"
+        android:text="@string/clock_checkbox"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="322dp" />
+
+    <CheckBox
+        android:id="@+id/alarmCheckBox"
+        android:layout_width="185dp"
+        android:layout_height="42dp"
+        android:background="#FFFFFF"
+        android:text="@string/alarm_checkbox"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="364dp" />
+
+    <CheckBox
+        android:id="@+id/stopwatchCheckBox"
+        android:layout_width="185dp"
+        android:layout_height="42dp"
+        android:background="#FFFFFF"
+        android:text="@string/stopwatch_checkbox"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="406dp" />
+
+    <CheckBox
+        android:id="@+id/timerCheckBox"
+        android:layout_width="185dp"
+        android:layout_height="42dp"
+        android:background="#FFFFFF"
+        android:text="@string/timer_checkbox"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="448dp" />
+
+    <CheckBox
+        android:id="@+id/focusCheckBox"
+        android:layout_width="185dp"
+        android:layout_height="42dp"
+        android:background="#FFFFFF"
+        android:text="@string/focus_checkbox"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="490dp" />
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="619dp" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="259dp"
+        tools:layout_editor_absoluteY="619dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

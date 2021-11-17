@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.NumberPicker
 import android.widget.TextView
+import com.doc.droidysdroidsclock.util.Mutables
 
 class TimerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,8 +44,9 @@ class TimerActivity : AppCompatActivity() {
                 overridePendingTransition(0, 0);
             }
         }
-        val customiseBtn: ImageButton = findViewById(R.id.imageButton4)
+        val customiseBtn: ImageButton = findViewById(R.id.customise_button)
         customiseBtn.setOnClickListener {
+            Mutables.previousPage = "TimerActivity";
             Intent(this, CustomiseActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(0, 0);

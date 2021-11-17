@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2999AD"
-    tools:context=".CustomiseActivity">
+    tools:context=".CustomiseIndividualActivity">
 
     <Button
         android:id="@+id/set_colour"
@@ -16,7 +16,7 @@
         android:text="@string/set_colour_button_ul"
         android:textFontWeight="5"
         android:textSize="13sp"
-        android:background="@drawable/set_colour_button_style"
+        android:background="#FFFFFF"
         tools:layout_editor_absoluteX="138dp"
         tools:layout_editor_absoluteY="587dp"
         tools:ignore="MissingConstraints" />

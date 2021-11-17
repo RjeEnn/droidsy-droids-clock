@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@drawable/gradient1"
+    android:id="@+id/timer_page"
     tools:context=".TimerActivity">
 
     <ImageButton
@@ -19,7 +20,7 @@
         app:srcCompat="@drawable/ic_baseline_menu_24" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/customise_button"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="283dp"
@@ -27,9 +28,9 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="114dp"
         android:background="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/union"
+        app:layout_constraintBottom_toTopOf="@+id/add15"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton12"
+        app:layout_constraintStart_toEndOf="@+id/imageButton6"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_palette_24" />
 

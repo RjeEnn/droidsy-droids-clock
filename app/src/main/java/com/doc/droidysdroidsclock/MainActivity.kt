@@ -9,6 +9,7 @@ import android.widget.ImageButton
 import android.widget.TextClock
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
+import com.doc.droidysdroidsclock.util.Mutables
 import java.text.DateFormat
 import java.util.*
 
@@ -47,9 +48,10 @@ class MainActivity : AppCompatActivity() {
                 overridePendingTransition(0, 0);
             }
         }
-        val customiseBtn: ImageButton = findViewById(R.id.imageButton4)
+        val customiseBtn: ImageButton = findViewById(R.id.customise_button)
         customiseBtn.setOnClickListener {
-            Intent(this, CustomiseIndividualActivity::class.java).also {
+            Mutables.previousPage = "MainActivity";
+            Intent(this, CustomiseActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(0, 0);
             }

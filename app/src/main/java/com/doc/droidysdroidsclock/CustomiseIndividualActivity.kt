@@ -14,18 +14,18 @@ class CustomiseIndividualActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customise_individual)
 
-        /*val textView: TextView = findViewById(R.id.text34);
+        val textView: TextView = findViewById(R.id.text34);
 
         val setColourBtn: Button = findViewById(R.id.set_colour)
         setColourBtn.setOnClickListener {
             val obj = object: ColorPickerPopup.ColorPickerObserver{
                 override fun onColor(color: Int, fromUser: Boolean) {
-                    setColourBtn.backgroundTintList = getColorStateList(color);
+                    //setColourBtn.backgroundTintList = getColorStateList(color);
 
                 }
 
                 override fun onColorPicked(color: Int) {
-                    setColourBtn.backgroundTintList = getColorStateList(color)
+                    //setColourBtn.backgroundTintList = getColorStateList(color)
                 }
             }
             val r = ColorPickerPopup.Builder(this)
@@ -42,6 +42,6 @@ class CustomiseIndividualActivity : AppCompatActivity() {
                 startActivity(it)
                 overridePendingTransition(0, 0);
             }*/
-        }*/
+        }
     }
 }
