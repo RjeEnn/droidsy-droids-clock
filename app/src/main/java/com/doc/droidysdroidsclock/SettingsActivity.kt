@@ -28,6 +28,7 @@ class SettingsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         var list_of_items = arrayOf("lync_ringtone5", "lync_ringtone6", "lync_videoadded")
         val dropdown: Spinner = findViewById(R.id.alarm_spinner)
         val aa = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item, list_of_items)
+        dropdown.setSelection(list_of_items.indexOf(Mutables.alarmTone))
         // Set layout to use when the list of choices appear
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         // Set Adapter to Spinner
@@ -51,6 +52,7 @@ class SettingsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
 
         val dropdown2: Spinner = findViewById(R.id.focus_spinner)
         val aa2 = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item, list_of_items)
+        dropdown2.setSelection(list_of_items.indexOf(Mutables.alarmTone))
         // Set layout to use when the list of choices appear
         aa2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         // Set Adapter to Spinner
@@ -79,6 +81,11 @@ class SettingsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         val focusCheck: CheckBox = findViewById(R.id.focusCheckBox)
         val worldClockCheck: CheckBox = findViewById(R.id.world_clockCheckBox)
 
+        alarmCheck.isChecked = Mutables.showAlarm
+        stopwatchCheck.isChecked = Mutables.showStopwatch
+        timerCheck.isChecked = Mutables.showTimer
+        focusCheck.isChecked = Mutables.showFocus
+        worldClockCheck.isChecked = Mutables.showWorldClock
 
         val cancelBtn: Button = findViewById(R.id.cancel_button)
         cancelBtn.setOnClickListener {

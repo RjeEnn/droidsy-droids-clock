@@ -27,8 +27,8 @@ class Mutables {
         var showTimer = true
         var showFocus = true
         var showWorldClock = false
-        var alarmTone = ""
-        var focusTone = ""
+        var alarmTone = "lync_ringtone5"
+        var focusTone = "lync_videoadded"
 
     }
 }
