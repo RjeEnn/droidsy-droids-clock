@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5B1887"
+    android:background="@drawable/gradient1"
+    android:id="@+id/main_page"
     tools:context=".MainActivity">
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/settings_button"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -19,7 +20,7 @@
         app:srcCompat="@drawable/ic_baseline_menu_24" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/customise_button"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
@@ -52,7 +53,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/clock_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -66,7 +67,7 @@
             android:textSize="13sp" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/alarm_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -79,7 +80,7 @@
             android:textSize="11sp" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/stopwatch_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -90,10 +91,10 @@
             android:minWidth="120dip"
             android:text="@string/stopwatch_button"
             android:textAllCaps="false"
-            android:textSize="11sp" />
+            android:textSize="11sp"/>
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/timer_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -106,7 +107,7 @@
             android:textSize="11sp" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/focus_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -116,7 +117,22 @@
             android:fontFamily="@font/comfortaa_bold"
             android:text="@string/focus_button"
             android:textAllCaps="false"
-            android:textSize="11sp" />
+            android:textSize="11sp"/>
+
+        <Button
+            android:id="@+id/world_clock_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#00FFFFFF"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="@string/focus_button"
+            android:textAllCaps="false"
+            android:textSize="11sp"
+            android:visibility="gone"/>
+
     </LinearLayout>
 
     <TextView

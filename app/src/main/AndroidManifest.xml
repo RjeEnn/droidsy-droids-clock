@@ -32,6 +32,12 @@
             android:exported="true"
             android:launchMode="singleTop" />
         <activity
+            android:name=".SettingsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CustomiseActivity"
+            android:exported="true" />
+        <activity
             android:name=".FocusActivity"
             android:exported="true"
             android:launchMode="singleTop" />
