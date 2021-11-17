@@ -84,13 +84,13 @@ class StopwatchActivity : AppCompatActivity() {
         if (!Mutables.showFocus) { focusTab.visibility = View.GONE }
         if (!Mutables.showWorldClock) { worldClockTab.visibility = View.GONE }
 
-        fun startAlarm(){
+        fun startAlarmActivity(){
             Intent(this, AlarmActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(0, 0)
             }
         }
-        fun startTimer(){
+        fun startTimerActivity(){
             Intent(this, TimerActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(0, 0)
@@ -108,10 +108,10 @@ class StopwatchActivity : AppCompatActivity() {
                     y2 = m.y
                     if (x1 < x2) {
                         //swiped right
-                        startAlarm()
+                        startAlarmActivity()
                     }else if (x1 > x2) {
                         //swiped left
-                        startTimer()
+                        startTimerActivity()
                     }
                 }
                 return false

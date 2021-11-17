@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
         if (!Mutables.showFocus) { focusTab.visibility = View.GONE }
         if (!Mutables.showWorldClock) { worldClockTab.visibility = View.GONE }
 
-        fun startAlarm(){
+        fun startAlarmActivity(){
             Intent(this, AlarmActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(0, 0)
@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
                     y2 = m.y
                     if (x1 > x2) {
                         //swiped left
-                        startAlarm()
+                        startAlarmActivity()
                     }
                 }
                 return false
