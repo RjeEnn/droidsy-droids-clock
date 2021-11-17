@@ -9,6 +9,7 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.*
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.doc.droidysdroidsclock.util.Mutables
 import com.doc.droidysdroidsclock.util.PrefUtil
 
@@ -41,6 +42,15 @@ class FocusActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         Log.i("FocusActivity","created")
         setContentView(R.layout.activity_focus)
+
+        val cl = findViewById(R.id.focus_page) as ConstraintLayout;
+        if (Mutables.focus === "gradient1") {
+            cl.setBackgroundResource(R.drawable.gradient1);
+        } else if (Mutables.focus === "gradient2") {
+            cl.setBackgroundResource(R.drawable.gradient2);
+        }else {
+            cl.setBackgroundResource(R.drawable.gradient3);
+        }
 
         /*
         * set listeners for buttons in navigation bar
@@ -103,6 +113,7 @@ class FocusActivity : AppCompatActivity() {
         val editLongSec: NumberPicker = findViewById(R.id.long_sec) //number of minutes for work countdowm
         val editShortMin: NumberPicker = findViewById(R.id.short_min) //number of minutes for work countdowm
         val editShortSec: NumberPicker = findViewById(R.id.short_sec) //number of minutes for work countdowm
+        val moreBtn: ImageButton = findViewById(R.id.more_button) //settings
 
         if (editWrkMin != null) {
             editWrkMin.minValue = 0
@@ -246,6 +257,8 @@ class FocusActivity : AppCompatActivity() {
                 editLongSec.visibility = View.GONE
                 editShortMin.visibility = View.GONE
                 editShortSec.visibility = View.GONE
+                customiseBtn.visibility = View.GONE
+                moreBtn.visibility = View.GONE
             }
         }
 
@@ -315,6 +328,8 @@ class FocusActivity : AppCompatActivity() {
             editLongSec.visibility = View.VISIBLE
             editShortMin.visibility = View.VISIBLE
             editShortSec.visibility = View.VISIBLE
+            customiseBtn.visibility = View.VISIBLE
+            moreBtn.visibility = View.VISIBLE
         }
 
     }

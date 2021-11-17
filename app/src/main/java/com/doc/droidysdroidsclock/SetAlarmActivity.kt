@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.NumberPicker
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.doc.droidysdroidsclock.util.Mutables
 
 class SetAlarmActivity: AppCompatActivity() {
@@ -13,6 +14,15 @@ class SetAlarmActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_set_alarm)
+
+        val cl = findViewById(R.id.set_alarm_page) as ConstraintLayout;
+        if (Mutables.set_alarm === "gradient1") {
+            cl.setBackgroundResource(R.drawable.gradient1);
+        } else if (Mutables.set_alarm === "gradient2") {
+            cl.setBackgroundResource(R.drawable.gradient2);
+        }else {
+            cl.setBackgroundResource(R.drawable.gradient3);
+        }
 
         val clockTab: Button = findViewById(R.id.clock_button)
         clockTab.setOnClickListener {

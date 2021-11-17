@@ -8,12 +8,22 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.NumberPicker
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.doc.droidysdroidsclock.util.Mutables
 
 class TimerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timer)
+
+        val cl = findViewById(R.id.timer_page) as ConstraintLayout;
+        if (Mutables.timer === "gradient1") {
+            cl.setBackgroundResource(R.drawable.gradient1);
+        } else if (Mutables.timer === "gradient2") {
+            cl.setBackgroundResource(R.drawable.gradient2);
+        }else {
+            cl.setBackgroundResource(R.drawable.gradient3);
+        }
 
         // BUTTONS
         val clockTab: Button = findViewById(R.id.clock_button)

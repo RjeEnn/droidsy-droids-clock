@@ -12,31 +12,42 @@ import com.doc.droidysdroidsclock.util.Mutables
 class CustomiseActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Log.i("FocusActivity", "created")
-        setContentView(R.layout.activity_customise)
+        super.onCreate(savedInstanceState);
+        Log.i("CustomiseActivity", "created");
+        setContentView(R.layout.activity_customise);
 
-        var newGradient = 0
+        val cl = findViewById(R.id.customise_page) as ConstraintLayout;
+        if (Mutables.customise === "gradient1") {
+            cl.setBackgroundResource(R.drawable.gradient1);
+        } else if (Mutables.customise === "gradient2") {
+            cl.setBackgroundResource(R.drawable.gradient2);
+        }else {
+            cl.setBackgroundResource(R.drawable.gradient3);
+        }
+
+        var newGradient = "";
         var list_of_items = arrayOf("gradient1", "gradient2", "gradient3");
 
         val dropdown: Spinner = findViewById(R.id.theme_spinner);
         val aa = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item, list_of_items);
         // Set layout to use when the list of choices appear
-        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Set Adapter to Spinner
-        dropdown.adapter = aa
+        dropdown.adapter = aa;
         dropdown.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parentView: AdapterView<*>?,selectedItemView: View,position: Int, id: Long
             ) {
-                val rl = (R.layout.activity_customise) as ConstraintLayout
+                val cl = findViewById(R.id.customise_page) as ConstraintLayout;
                 if (position === 0) {
-                    newGradient = R.drawable.gradient1
+                    cl.setBackgroundResource(R.drawable.gradient1);
+                    newGradient = "gradient1";
                 } else if (position === 1) {
-                    newGradient = R.drawable.gradient2
+                    cl.setBackgroundResource(R.drawable.gradient2);
+                    newGradient = "gradient2";
                 }else {
-                    newGradient = R.drawable.gradient3
+                    cl.setBackgroundResource(R.drawable.gradient3);
+                    newGradient = "gradient3";
                 }
-                rl.setBackgroundResource(newGradient)
             }
 
             override fun onNothingSelected(parentView: AdapterView<*>?) {
@@ -54,11 +65,11 @@ class CustomiseActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
         val allCheck: CheckBox = findViewById(R.id.allCheckBox)
         allCheck.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
-                clockCheck.isChecked = true
-                alarmCheck.isChecked = true
-                stopwatchCheck.isChecked = true
-                timerCheck.isChecked = true
-                focusCheck.isChecked = true
+                clockCheck.isChecked = true;
+                alarmCheck.isChecked = true;
+                stopwatchCheck.isChecked = true;
+                timerCheck.isChecked = true;
+                focusCheck.isChecked = true;
 
             }
         }
@@ -109,26 +120,25 @@ class CustomiseActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
         val saveBtn: Button = findViewById(R.id.save_button)
         saveBtn.setOnClickListener {
             if (clockCheck.isChecked === true){
-                val rl = (R.layout.activity_main) as ConstraintLayout
-                rl.setBackgroundResource(newGradient)
+                Log.i("CustomiseActivity","clockChecked");
+                Mutables.main = newGradient;
             }
             if (alarmCheck.isChecked === true){
-                val rl = (R.layout.activity_alarm) as ConstraintLayout
-                rl.setBackgroundResource(newGradient)
-                val rl2 = (R.layout.activity_set_alarm) as ConstraintLayout
-                rl2.setBackgroundResource(newGradient)
+                Log.i("CustomiseActivity","alarmChecked");
+                Mutables.alarm = newGradient;
+                Mutables.set_alarm = newGradient;
             }
             if (stopwatchCheck.isChecked === true){
-                val rl = (R.layout.activity_stopwatch) as ConstraintLayout
-                rl.setBackgroundResource(newGradient)
+                Log.i("CustomiseActivity","stopwatchChecked");
+                Mutables.stopwatch = newGradient;
             }
             if (timerCheck.isChecked === true){
-                val rl = (R.layout.activity_timer) as ConstraintLayout
-                rl.setBackgroundResource(newGradient)
+                Log.i("CustomiseActivity","timerChecked");
+                Mutables.timer = newGradient;
             }
             if (focusCheck.isChecked === true){
-                val rl = (R.layout.activity_focus) as ConstraintLayout
-                rl.setBackgroundResource(newGradient)
+                Log.i("CustomiseActivity","focusChecked");
+                Mutables.focus = newGradient;
             }
 
             when {

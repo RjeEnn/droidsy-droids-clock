@@ -7,12 +7,22 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.doc.droidysdroidsclock.util.Mutables
 
 class StopwatchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stopwatch)
+
+        val cl = findViewById(R.id.stopwatch_page) as ConstraintLayout;
+        if (Mutables.stopwatch === "gradient1") {
+            cl.setBackgroundResource(R.drawable.gradient1);
+        } else if (Mutables.stopwatch === "gradient2") {
+            cl.setBackgroundResource(R.drawable.gradient2);
+        }else {
+            cl.setBackgroundResource(R.drawable.gradient3);
+        }
 
         // BUTTONS
         val clockTab: Button = findViewById(R.id.clock_button)

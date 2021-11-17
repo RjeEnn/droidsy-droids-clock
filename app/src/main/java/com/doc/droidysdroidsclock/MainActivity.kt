@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextClock
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.ResourcesCompat
 import com.doc.droidysdroidsclock.util.Mutables
 import java.text.DateFormat
@@ -18,6 +19,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val cl = findViewById(R.id.main_page) as ConstraintLayout;
+        if (Mutables.main === "gradient1") {
+            cl.setBackgroundResource(R.drawable.gradient1);
+        } else if (Mutables.main === "gradient2") {
+            cl.setBackgroundResource(R.drawable.gradient2);
+        }else {
+            cl.setBackgroundResource(R.drawable.gradient3);
+        }
 
         // BUTTONS
         val alarmTab: Button = findViewById(R.id.alarm_button)

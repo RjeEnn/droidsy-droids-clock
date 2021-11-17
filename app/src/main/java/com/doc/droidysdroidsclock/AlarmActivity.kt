@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.doc.droidysdroidsclock.util.Mutables
 
 class AlarmActivity: AppCompatActivity() {
@@ -12,6 +13,15 @@ class AlarmActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alarm)
+
+        val cl = findViewById(R.id.alarm_page) as ConstraintLayout;
+        if (Mutables.alarm === "gradient1") {
+            cl.setBackgroundResource(R.drawable.gradient1);
+        } else if (Mutables.alarm === "gradient2") {
+            cl.setBackgroundResource(R.drawable.gradient2);
+        }else {
+            cl.setBackgroundResource(R.drawable.gradient3);
+        }
 
         val clockTab: Button = findViewById(R.id.clock_button)
         clockTab.setOnClickListener {
