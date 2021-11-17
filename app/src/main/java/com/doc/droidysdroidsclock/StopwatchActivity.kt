@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.LinearInterpolator
 import android.widget.*
@@ -63,12 +64,35 @@ class StopwatchActivity : AppCompatActivity() {
         val resumeBtn: ImageButton = findViewById(R.id.resume_btn)
         val startBtn: Button = findViewById(R.id.start_stopwatch)
         val union: View = findViewById(R.id.union)
+        val lap: TextView = findViewById(R.id.lap)
+        val lapTime: TextView = findViewById((R.id.lap_time))
+
+        val timeAnimIn = AlphaAnimation(0f, 1f)
+        val timeAnimOut = AlphaAnimation(1f, 0f)
+        timeAnimIn.duration = 500
+        timeAnimOut.duration = 500
+
+        lapBtn.setOnClickListener {
+            lapTime.text = timing.text
+            lapTime.startAnimation(timeAnimIn)
+            lap.startAnimation(timeAnimIn)
+
+            timeElapsed = 0.0
+        }
 
         val anim = ObjectAnimator.ofFloat(union, "rotation", 0f, 360f)
 
         anim.duration = 1000
         anim.repeatCount = Animation.INFINITE
         anim.repeatMode = ObjectAnimator.RESTART
+
+        val prefs: SharedPreferences = getSharedPreferences("prefs", MODE_PRIVATE)
+        stopped = prefs.getBoolean("stopped", true)
+        paused = prefs.getBoolean("paused", false)
+
+        if(!stopped && !paused) {
+            anim.start()
+        }
 
         startBtn.setOnClickListener {
             startBtn.visibility = View.GONE
@@ -133,6 +157,7 @@ class StopwatchActivity : AppCompatActivity() {
             stopService(serviceIntent)
             timeElapsed = 0.0
             timing.text = getTimeStringFromDouble(timeElapsed)
+            lapTime.text = getTimeStringFromDouble(timeElapsed)
 
             stopped = true
             paused = false
