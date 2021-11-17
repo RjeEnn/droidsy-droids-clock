@@ -8,11 +8,8 @@ import android.util.Log
 import android.view.View
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
-import android.view.animation.LinearInterpolator
-import android.widget.*
 import kotlin.math.roundToInt
 import android.view.MotionEvent
-import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
@@ -35,13 +32,17 @@ class StopwatchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stopwatch)
 
-        val cl = findViewById(R.id.stopwatch_page) as ConstraintLayout
-        if (Mutables.stopwatch === "gradient1") {
-            cl.setBackgroundResource(R.drawable.gradient1)
-        } else if (Mutables.stopwatch === "gradient2") {
-            cl.setBackgroundResource(R.drawable.gradient2)
-        }else {
-            cl.setBackgroundResource(R.drawable.gradient3)
+        val cl = findViewById<ConstraintLayout>(R.id.stopwatch_page)
+        when {
+            Mutables.stopwatch === "gradient1" -> {
+                cl.setBackgroundResource(R.drawable.gradient1)
+            }
+            Mutables.stopwatch === "gradient2" -> {
+                cl.setBackgroundResource(R.drawable.gradient2)
+            }
+            else -> {
+                cl.setBackgroundResource(R.drawable.gradient3)
+            }
         }
 
         // BUTTONS

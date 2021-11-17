@@ -33,6 +33,9 @@ class PrefUtil {
         private const val TIMER_STATE = "timerState"
         private const val TIME_REMAINING = "timeRemaining"
         private const val ALARM_TIME = "alarmTime"
+        private const val PREVIOUS_TIMER_LENGTH_SECONDS_ID = "com.doc.droidysdroidsclock.FocusActivity.previous_timer_length"
+        private const val TIMER_STATE_ID = "com.doc.droidysdroidsclock.FocusActivity.timer_state"
+        private const val SECONDS_REMAINING_ID = "com.doc.droidysdroidsclock.FocusActivity.seconds_remaining"
 
         fun getLenInSec(context: Context): Long {
             val prefs: SharedPreferences = context.getSharedPreferences(TIMER_LEN_SEC, MODE_PRIVATE)
@@ -81,15 +84,11 @@ class PrefUtil {
             val prefs: SharedPreferences = context.getSharedPreferences(ALARM_TIME, MODE_PRIVATE)
             val editor: SharedPreferences.Editor = prefs.edit()
             editor.putLong(ALARM_TIME, time)
-
-        fun getTimerLength(context: Context, min: Int, sec: Int): Double{
-            Log.i("PrefUtil",
-                "" + min.toDouble() + "+" + (sec/60.0)
-            )
-            return min.toDouble() + sec/60.0
         }
 
-        private const val PREVIOUS_TIMER_LENGTH_SECONDS_ID = "com.doc.droidysdroidsclock.FocusActivity.previous_timer_length"
+        fun getTimerLength(context: Context, min: Int, sec: Int): Double{
+            return min.toDouble() + sec/60.0
+        }
 
         fun getPreviousTimeLengthSeconds(context: Context): Long{
             val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -101,8 +100,6 @@ class PrefUtil {
             editor.putLong(PREVIOUS_TIMER_LENGTH_SECONDS_ID, seconds)
             editor.apply()
         }
-
-        private const val TIMER_STATE_ID = "com.doc.droidysdroidsclock.FocusActivity.timer_state"
 
         fun getTimerState(context: Context): FocusActivity.TimerState{
             val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -116,8 +113,6 @@ class PrefUtil {
             editor.putInt(TIMER_STATE_ID, ordinal)
             editor.apply()
         }
-
-        private const val SECONDS_REMAINING_ID = "com.doc.droidysdroidsclock.FocusActivity.seconds_remaining"
 
         fun getSecondsRemaining(context: Context): Long{
             val preferences = PreferenceManager.getDefaultSharedPreferences(context)

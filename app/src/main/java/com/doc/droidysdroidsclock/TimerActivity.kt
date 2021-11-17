@@ -453,7 +453,7 @@ class TimerActivity : AppCompatActivity() {
 
     private fun startTimer() {
         if(state == TimerState.Stopped) {
-            timeRemaining = PrefUtil.getTimerLength(this).toLong()
+            timeRemaining = PrefUtil.getTimeLength(this).toLong()
         }
         state = TimerState.Running
 
@@ -468,7 +468,7 @@ class TimerActivity : AppCompatActivity() {
 
     private fun newTimer() {
         val progressCD: MaterialProgressBar = findViewById(R.id.materialProgressBar)
-        val len = PrefUtil.getTimerLength(this)
+        val len = PrefUtil.getTimeLength(this)
         timerLength = len.toLong()
         progressCD.max = timerLength.toInt()
     }

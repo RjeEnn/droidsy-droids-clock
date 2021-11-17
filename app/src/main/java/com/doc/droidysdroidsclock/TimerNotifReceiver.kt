@@ -39,7 +39,7 @@ class TimerNotifReceiver : BroadcastReceiver() {
             }
 
             "start" -> {
-                val timerLength = PrefUtil.getTimerLength(context)
+                val timerLength = PrefUtil.getTimeLength(context)
                 val timeRemaining = timerLength.toLong()
                 val alertTime = TimerActivity.setAlarm(context, TimerActivity.elapsed, timeRemaining)
 
