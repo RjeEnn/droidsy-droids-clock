@@ -125,35 +125,42 @@ class SettingsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
 
         val saveBtn: Button = findViewById(R.id.save_button)
         saveBtn.setOnClickListener {
-            if (worldClockCheck.isChecked === true){
-                Log.i("CustomiseActivity","clockChecked")
-                Mutables.showWorldClock = true
-            }else{
-                Mutables.showWorldClock = false
-            }
-            if (alarmCheck.isChecked === true){
-                Log.i("CustomiseActivity","alarmChecked")
+            Mutables.showWorldClock = worldClockCheck.isChecked
+            if (alarmCheck.isChecked){
                 Mutables.showAlarm = true
             }else{
-                Mutables.showAlarm = false
+                if (Mutables.previousPage === "AlarmActivity"){
+                    alarmCheck.isChecked = true
+                }else {
+                    Mutables.showAlarm = false
+                }
             }
-            if (stopwatchCheck.isChecked === true){
-                Log.i("CustomiseActivity","stopwatchChecked")
+            if (stopwatchCheck.isChecked){
                 Mutables.showStopwatch = true
             }else{
-                Mutables.showStopwatch = false
+                if (Mutables.previousPage === "StopwatchActivity"){
+                    stopwatchCheck.isChecked = true
+                }else {
+                    Mutables.showStopwatch = false
+                }
             }
-            if (timerCheck.isChecked === true){
-                Log.i("CustomiseActivity","timerChecked")
+            if (timerCheck.isChecked){
                 Mutables.showTimer = true
             }else{
-                Mutables.showTimer = false
+                if (Mutables.previousPage === "TimerActivity"){
+                    timerCheck.isChecked = true
+                }else {
+                    Mutables.showTimer = false
+                }
             }
-            if (focusCheck.isChecked === true){
-                Log.i("CustomiseActivity","focusChecked")
+            if (focusCheck.isChecked){
                 Mutables.showFocus = true
             }else{
-                Mutables.showFocus = false
+                if (Mutables.previousPage === "FocusActivity"){
+                    focusCheck.isChecked = true
+                }else {
+                    Mutables.showFocus = false
+                }
             }
 
             when {

@@ -70,7 +70,7 @@ class StopwatchActivity : AppCompatActivity() {
         }
 
         val settingsBtn: ImageButton = findViewById(R.id.settings_button)
-        customiseBtn.setOnClickListener {
+        settingsBtn.setOnClickListener {
             Mutables.previousPage = "StopwatchActivity"
             Intent(this, SettingsActivity::class.java).also {
                 startActivity(it)

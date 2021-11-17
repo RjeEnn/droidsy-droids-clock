@@ -111,7 +111,7 @@ class FocusActivity : AppCompatActivity() {
         }
 
         val settingsBtn: ImageButton = findViewById(R.id.settings_button)
-        customiseBtn.setOnClickListener {
+        settingsBtn.setOnClickListener {
             Mutables.previousPage = "FocusActivity"
             Intent(this, SettingsActivity::class.java).also {
                 startActivity(it)
@@ -125,7 +125,7 @@ class FocusActivity : AppCompatActivity() {
         if (!Mutables.showTimer) { timerTab.visibility = View.GONE }
         if (!Mutables.showWorldClock) { worldClockTab.visibility = View.GONE }
 
-        fun startTimer(){
+        fun startTimerActivity(){
             Intent(this, TimerActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(0, 0)
@@ -143,7 +143,7 @@ class FocusActivity : AppCompatActivity() {
                     y2 = m.y
                     if (x1 < x2) {
                         //swiped right
-                        startTimer()
+                        startTimerActivity()
                     }
                 }
                 return false
@@ -438,8 +438,8 @@ class FocusActivity : AppCompatActivity() {
 
         secondsRemaining = if (timerState== TimerState.Started || timerState== TimerState.Paused){
             PrefUtil.getSecondsRemaining(this)
-         }else{
-             timerLengthSeconds
+        }else{
+            timerLengthSeconds
         }
 
         //updateButtons()
@@ -452,7 +452,7 @@ class FocusActivity : AppCompatActivity() {
         if (onOwn) {
             Log.i("FocusActivity","called by onFinish")
 
-            if (Mutables.playSound === true) {
+            if (Mutables.playSound){
                 var mediaPlayer = MediaPlayer.create(this, tone)
                 mediaPlayer.start()
                 mediaPlayer.setOnCompletionListener { mediaPlayer.release() }
@@ -520,7 +520,7 @@ class FocusActivity : AppCompatActivity() {
         } else {
             Log.i("FocusActivity","sesh is short in setNetTimerLength function")
             lengthInMinutes = com.doc.droidysdroidsclock.util.PrefUtil.getTimerLength(this, shortMin, shortSec)
-            }
+        }
         timerLengthSeconds = (lengthInMinutes * 60).toLong()
         //progress_countdown.max = timerLengthSeconds.toInt()
     }
