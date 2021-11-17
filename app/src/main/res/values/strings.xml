@@ -45,7 +45,18 @@
     <string name="work">work</string>
     <string name="brk1">short break</string>
     <string name="brk2">long break</string>
-    <string name="wrk_time">00:30:00</string>
-    <string name="brk1_time">00:05:00</string>
-    <string name="brk2_time">00:10:00</string>
+
+
+    <string name="set_colour_button_ul">set colour</string>
+    <string name="start_colour">#574BCD</string>
+
+    <string name="customise"><b>Customise</b></string>
+    <string name="theme"><b>Theme</b></string>
+    <string name="apply"><b>Apply To</b></string>
+    <string name="all_checkbox">All Pages</string>
+    <string name="clock_checkbox">Clock Page</string>
+    <string name="stopwatch_checkbox">Stopwatch Page</string>
+    <string name="timer_checkbox">Timer Page</string>
+    <string name="focus_checkbox">Focus Page</string>
+    <string name="alarm_checkbox">Alarm Page</string>
 </resources>

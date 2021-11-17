@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient1"
+    android:id="@+id/customise_page"
+    tools:context=".CustomiseActivity">
+
+    <TextView
+        android:id="@+id/page_title"
+        android:layout_width="129dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/customise"
+        android:textFontWeight="900"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/themeIdentifier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="88dp"
+        android:text="@string/theme"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/page_title"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="96dp"
+        android:text="@string/apply"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/themeIdentifier"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/theme_spinner"
+        android:layout_width="211dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="168dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.030"
+        app:layout_constraintStart_toEndOf="@+id/themeIdentifier"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <CheckBox
+        android:id="@+id/allCheckBox"
+        android:layout_width="185dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="292dp"
+        android:background="#FFFFFF"
+        android:text="@string/all_checkbox"
+        app:layout_constraintStart_toEndOf="@+id/apply"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/clockCheckBox"
+        android:layout_width="185dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="30dp"
+        android:background="#FFFFFF"
+        android:text="@string/clock_checkbox"
+        app:layout_constraintStart_toEndOf="@+id/apply"
+        app:layout_constraintTop_toBottomOf="@+id/allCheckBox"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/alarmCheckBox"
+        android:layout_width="185dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="30dp"
+        android:background="#FFFFFF"
+        android:text="@string/alarm_checkbox"
+        app:layout_constraintStart_toEndOf="@+id/apply"
+        app:layout_constraintTop_toBottomOf="@+id/clockCheckBox"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/stopwatchCheckBox"
+        android:layout_width="185dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="30dp"
+        android:background="#FFFFFF"
+        android:text="@string/stopwatch_checkbox"
+        app:layout_constraintStart_toEndOf="@+id/apply"
+        app:layout_constraintTop_toBottomOf="@+id/alarmCheckBox"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/timerCheckBox"
+        android:layout_width="185dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="30dp"
+        android:background="#FFFFFF"
+        android:text="@string/timer_checkbox"
+        app:layout_constraintStart_toEndOf="@+id/apply"
+        app:layout_constraintTop_toBottomOf="@+id/stopwatchCheckBox"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/focusCheckBox"
+        android:layout_width="185dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="30dp"
+        android:background="#FFFFFF"
+        android:text="@string/focus_checkbox"
+        app:layout_constraintStart_toEndOf="@+id/apply"
+        app:layout_constraintTop_toBottomOf="@+id/timerCheckBox"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/save_button"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/focusCheckBox"
+        app:layout_constraintVertical_bias="0.382"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/focusCheckBox"
+        app:layout_constraintVertical_bias="0.382"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
