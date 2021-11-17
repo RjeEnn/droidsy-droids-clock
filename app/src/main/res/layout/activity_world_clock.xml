@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient1"
-    android:id="@+id/main_page"
-    tools:context=".MainActivity">
+    android:id="@+id/world_clock_page"
+    tools:context=".WorldClockActivity">
 
     <ImageButton
         android:id="@+id/settings_button"
@@ -30,19 +30,80 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_palette_24" />
 
+    <TextView
+        android:id="@+id/jamaica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="48dp"
+        android:text="Jamaica"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_button"
+        tools:ignore="MissingConstraints" />
+
     <TextClock
-        android:id="@+id/digitalClock"
+        android:id="@+id/ourTimeClock"
         android:layout_width="0dp"
         android:layout_height="90dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="160dp"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/alaska"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:text="Alaska"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ourTimeClock"
+        tools:ignore="MissingConstraints" />
+
+    <TextClock
+        android:id="@+id/alaskaClock"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="68dp"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ourTimeClock" />
+
+    <TextView
+        android:id="@+id/japan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="40dp"
+        android:text="Japan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alaskaClock"
+        tools:ignore="MissingConstraints" />
+
+    <TextClock
+        android:id="@+id/japanClock"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="68dp"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alaskaClock" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -133,18 +194,5 @@
             android:textSize="11sp"/>
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/dateText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:fontFamily="@font/comfortaa_bold"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.667"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/digitalClock" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

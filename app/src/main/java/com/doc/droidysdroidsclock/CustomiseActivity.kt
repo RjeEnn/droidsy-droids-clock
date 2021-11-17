@@ -21,12 +21,22 @@ class CustomiseActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
             cl.setBackgroundResource(R.drawable.gradient1)
         } else if (Mutables.customise === "gradient2") {
             cl.setBackgroundResource(R.drawable.gradient2)
-        }else {
+        } else if (Mutables.customise === "gradient3") {
             cl.setBackgroundResource(R.drawable.gradient3)
+        } else if (Mutables.customise === "gradient4") {
+            cl.setBackgroundResource(R.drawable.gradient4)
+        } else if (Mutables.customise === "gradient5") {
+            cl.setBackgroundResource(R.drawable.gradient5)
+        } else if (Mutables.customise === "gradient6") {
+            cl.setBackgroundResource(R.drawable.gradient6)
+        } else if (Mutables.customise === "gradient7") {
+            cl.setBackgroundResource(R.drawable.gradient7)
+        }else {
+            cl.setBackgroundResource(R.drawable.gradient8)
         }
 
         var newGradient = ""
-        var list_of_items = arrayOf("gradient1", "gradient2", "gradient3")
+        var list_of_items = arrayOf("gradient1", "gradient2", "gradient3", "gradient4", "gradient5", "gradient6","gradient7", "gradient8")
 
         val dropdown: Spinner = findViewById(R.id.theme_spinner)
         val aa = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item, list_of_items)
@@ -44,9 +54,24 @@ class CustomiseActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
                 } else if (position === 1) {
                     cl.setBackgroundResource(R.drawable.gradient2)
                     newGradient = "gradient2"
-                }else {
+                }else if (position === 2) {
                     cl.setBackgroundResource(R.drawable.gradient3)
                     newGradient = "gradient3"
+                }else if (position === 3) {
+                    cl.setBackgroundResource(R.drawable.gradient4)
+                    newGradient = "gradient4"
+                }else if (position === 4) {
+                    cl.setBackgroundResource(R.drawable.gradient5)
+                    newGradient = "gradient5"
+                }else if (position === 5) {
+                    cl.setBackgroundResource(R.drawable.gradient6)
+                    newGradient = "gradient6"
+                }else if (position === 6) {
+                    cl.setBackgroundResource(R.drawable.gradient7)
+                    newGradient = "gradient7"
+                }else {
+                    cl.setBackgroundResource(R.drawable.gradient8)
+                    newGradient = "gradient8"
                 }
             }
 
@@ -61,6 +86,7 @@ class CustomiseActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
         val stopwatchCheck: CheckBox = findViewById(R.id.stopwatchCheckBox)
         val timerCheck: CheckBox = findViewById(R.id.timerCheckBox)
         val focusCheck: CheckBox = findViewById(R.id.focusCheckBox)
+        val worldClockCheck: CheckBox = findViewById(R.id.world_clockCheckBox)
 
         val allCheck: CheckBox = findViewById(R.id.allCheckBox)
         allCheck.setOnCheckedChangeListener { buttonView, isChecked ->
@@ -70,6 +96,7 @@ class CustomiseActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
                 stopwatchCheck.isChecked = true
                 timerCheck.isChecked = true
                 focusCheck.isChecked = true
+                worldClockCheck.isChecked = true
 
             }
         }
@@ -113,6 +140,12 @@ class CustomiseActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
                         overridePendingTransition(0, 0)
                     }
                 }
+                Mutables.previousPage === "WorldClockActivity" -> {
+                    android.content.Intent(this, com.doc.droidysdroidsclock.WorldClockActivity::class.java).also {
+                        startActivity(it)
+                        overridePendingTransition(0, 0)
+                    }
+                }
             }
         }
 
@@ -139,6 +172,10 @@ class CustomiseActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
             if (focusCheck.isChecked === true){
                 Log.i("CustomiseActivity","focusChecked")
                 Mutables.focus = newGradient
+            }
+            if (worldClockCheck.isChecked === true){
+                Log.i("CustomiseActivity","focusChecked")
+                Mutables.world_clock = newGradient
             }
 
             when {
@@ -174,6 +211,12 @@ class CustomiseActivity : AppCompatActivity(), AdapterView.OnItemSelectedListene
                 }
                 Mutables.previousPage === "SetAlarmActivity" -> {
                     Intent(this, SetAlarmActivity::class.java).also {
+                        startActivity(it)
+                        overridePendingTransition(0, 0)
+                    }
+                }
+                Mutables.previousPage === "WorldClockActivity" -> {
+                    android.content.Intent(this, com.doc.droidysdroidsclock.WorldClockActivity::class.java).also {
                         startActivity(it)
                         overridePendingTransition(0, 0)
                     }

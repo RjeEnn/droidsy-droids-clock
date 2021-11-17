@@ -32,8 +32,18 @@ class MainActivity : AppCompatActivity() {
             cl.setBackgroundResource(R.drawable.gradient1)
         } else if (Mutables.main === "gradient2") {
             cl.setBackgroundResource(R.drawable.gradient2)
-        }else {
+        } else if (Mutables.main === "gradient3") {
             cl.setBackgroundResource(R.drawable.gradient3)
+        } else if (Mutables.main === "gradient4") {
+            cl.setBackgroundResource(R.drawable.gradient4)
+        } else if (Mutables.main === "gradient5") {
+            cl.setBackgroundResource(R.drawable.gradient5)
+        } else if (Mutables.main === "gradient6") {
+            cl.setBackgroundResource(R.drawable.gradient6)
+        } else if (Mutables.main === "gradient7") {
+            cl.setBackgroundResource(R.drawable.gradient7)
+        }else {
+            cl.setBackgroundResource(R.drawable.gradient8)
         }
 
         // BUTTONS
@@ -84,6 +94,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         val worldClockTab: Button = findViewById(R.id.world_clock_button)
+        worldClockTab.setOnClickListener {
+            Intent(this, WorldClockActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(0, 0)
+            }
+        }
+
         if (!Mutables.showAlarm) { alarmTab.visibility = View.GONE }
         if (!Mutables.showStopwatch) { stopwatchTab.visibility = View.GONE }
         if (!Mutables.showTimer) { timerTab.visibility = View.GONE }
@@ -122,7 +139,10 @@ class MainActivity : AppCompatActivity() {
 
         val c: Context = applicationContext
         val timeClock: TextClock = findViewById(R.id.digitalClock)
+        timeClock.timeZone = "GMT-1"
         val typeface = ResourcesCompat.getFont(c,R.font.comfortaa_bold)
         timeClock.typeface = typeface
+
+
     }
 }

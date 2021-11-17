@@ -21,6 +21,7 @@ class Mutables {
         var set_alarm = "gradient1"
         var stopwatch = "gradient1"
         var timer = "gradient1"
+        var world_clock = "gradient1"
         var playSound = true
         var showAlarm = true
         var showStopwatch = true
