@@ -15,13 +15,13 @@ class StopwatchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stopwatch)
 
-        val cl = findViewById(R.id.stopwatch_page) as ConstraintLayout;
+        val cl = findViewById(R.id.stopwatch_page) as ConstraintLayout
         if (Mutables.stopwatch === "gradient1") {
-            cl.setBackgroundResource(R.drawable.gradient1);
+            cl.setBackgroundResource(R.drawable.gradient1)
         } else if (Mutables.stopwatch === "gradient2") {
-            cl.setBackgroundResource(R.drawable.gradient2);
+            cl.setBackgroundResource(R.drawable.gradient2)
         }else {
-            cl.setBackgroundResource(R.drawable.gradient3);
+            cl.setBackgroundResource(R.drawable.gradient3)
         }
 
         // BUTTONS
@@ -29,36 +29,36 @@ class StopwatchActivity : AppCompatActivity() {
         clockTab.setOnClickListener {
             Intent(this, MainActivity::class.java).also {
                 startActivity(it)
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0)
             }
         }
         val alarmTab: Button = findViewById(R.id.alarm_button)
         alarmTab.setOnClickListener {
             Intent(this, AlarmActivity::class.java).also {
                 startActivity(it)
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0)
             }
         }
         val timerTab: Button = findViewById(R.id.timer_button)
         timerTab.setOnClickListener {
             Intent(this, TimerActivity::class.java).also {
                 startActivity(it)
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0)
             }
         }
         val focusTab: Button = findViewById(R.id.focus_button)
         focusTab.setOnClickListener {
             Intent(this, FocusActivity::class.java).also {
                 startActivity(it)
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0)
             }
         }
         val customiseBtn: ImageButton = findViewById(R.id.customise_button)
         customiseBtn.setOnClickListener {
-            Mutables.previousPage = "StopwatchActivity";
+            Mutables.previousPage = "StopwatchActivity"
             Intent(this, CustomiseActivity::class.java).also {
                 startActivity(it)
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0)
             }
         }
 

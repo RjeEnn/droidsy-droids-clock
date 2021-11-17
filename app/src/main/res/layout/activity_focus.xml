@@ -257,11 +257,11 @@
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/focus_sound"
+        app:layout_constraintStart_toEndOf="@id/focus_sound_off"
         app:srcCompat="@drawable/ic_begin_focus" />
 
     <ImageButton
-        android:id="@+id/focus_sound"
+        android:id="@+id/focus_sound_off"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
@@ -270,6 +270,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editLongBrkName"
         app:srcCompat="@drawable/ic_baseline_volume_off_24" />
+
+    <ImageButton
+        android:id="@+id/focus_sound_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toStartOf="@+id/begin_focus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editLongBrkName"
+        app:srcCompat="@drawable/ic_baseline_volume_up_24" />
 
     <!-- view 2  -->
     <TextView
@@ -299,16 +310,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/sound_on_focus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-        app:layout_constraintEnd_toStartOf="@id/pause_focus"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time_remaining"
-        app:srcCompat="@drawable/ic_baseline_volume_up_24" />
 
     <ImageButton
         android:id="@+id/pause_focus"
@@ -317,7 +318,8 @@
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/sound_on_focus"
+        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintStart_toEndOf="@+id/cancel_focus"
         app:layout_constraintTop_toBottomOf="@+id/time_remaining"
         app:srcCompat="@drawable/ic_baseline_pause_24" />
 

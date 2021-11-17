@@ -21,6 +21,7 @@ class Mutables {
         var set_alarm = "gradient1";
         var stopwatch = "gradient1";
         var timer = "gradient1";
+        var playSound = true;
 
     }
 }

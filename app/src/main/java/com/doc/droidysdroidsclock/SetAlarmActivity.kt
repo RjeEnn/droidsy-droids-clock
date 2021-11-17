@@ -15,50 +15,50 @@ class SetAlarmActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_set_alarm)
 
-        val cl = findViewById(R.id.set_alarm_page) as ConstraintLayout;
+        val cl = findViewById(R.id.set_alarm_page) as ConstraintLayout
         if (Mutables.set_alarm === "gradient1") {
-            cl.setBackgroundResource(R.drawable.gradient1);
+            cl.setBackgroundResource(R.drawable.gradient1)
         } else if (Mutables.set_alarm === "gradient2") {
-            cl.setBackgroundResource(R.drawable.gradient2);
+            cl.setBackgroundResource(R.drawable.gradient2)
         }else {
-            cl.setBackgroundResource(R.drawable.gradient3);
+            cl.setBackgroundResource(R.drawable.gradient3)
         }
 
         val clockTab: Button = findViewById(R.id.clock_button)
         clockTab.setOnClickListener {
             Intent(this, MainActivity::class.java).also {
                 startActivity(it)
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0)
             }
         }
         val stopwatchTab: Button = findViewById(R.id.stopwatch_button)
         stopwatchTab.setOnClickListener {
             Intent(this, StopwatchActivity::class.java).also {
                 startActivity(it)
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0)
             }
         }
         val timerTab: Button = findViewById(R.id.timer_button)
         timerTab.setOnClickListener {
             Intent(this, TimerActivity::class.java).also {
                 startActivity(it)
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0)
             }
         }
         val focusTab: Button = findViewById(R.id.focus_button)
         focusTab.setOnClickListener {
             Intent(this, FocusActivity::class.java).also {
                 startActivity(it)
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0)
             }
         }
         val customiseBtn: ImageButton = findViewById(R.id.customise_button)
         customiseBtn.setOnClickListener {
 
-            Mutables.previousPage = "SetAlarmActivity";
+            Mutables.previousPage = "SetAlarmActivity"
             Intent(this, CustomiseActivity::class.java).also {
                 startActivity(it)
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0)
             }
         }
 

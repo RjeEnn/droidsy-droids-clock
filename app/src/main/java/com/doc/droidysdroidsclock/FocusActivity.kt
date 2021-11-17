@@ -1,6 +1,8 @@
 package com.doc.droidysdroidsclock
 
 import android.content.Intent
+import android.media.AudioManager
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -12,6 +14,8 @@ import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.doc.droidysdroidsclock.util.Mutables
 import com.doc.droidysdroidsclock.util.PrefUtil
+import java.io.IOError
+import java.io.IOException
 
 
 class FocusActivity : AppCompatActivity() {
@@ -43,13 +47,13 @@ class FocusActivity : AppCompatActivity() {
         Log.i("FocusActivity","created")
         setContentView(R.layout.activity_focus)
 
-        val cl = findViewById(R.id.focus_page) as ConstraintLayout;
+        val cl = findViewById(R.id.focus_page) as ConstraintLayout
         if (Mutables.focus === "gradient1") {
-            cl.setBackgroundResource(R.drawable.gradient1);
+            cl.setBackgroundResource(R.drawable.gradient1)
         } else if (Mutables.focus === "gradient2") {
-            cl.setBackgroundResource(R.drawable.gradient2);
+            cl.setBackgroundResource(R.drawable.gradient2)
         }else {
-            cl.setBackgroundResource(R.drawable.gradient3);
+            cl.setBackgroundResource(R.drawable.gradient3)
         }
 
         /*
@@ -59,37 +63,37 @@ class FocusActivity : AppCompatActivity() {
         clockTab.setOnClickListener {
             Intent(this, MainActivity::class.java).also {
                 startActivity(it)
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0)
             }
         }
         val alarmTab: Button = findViewById(R.id.alarm_button)
         alarmTab.setOnClickListener {
             Intent(this, AlarmActivity::class.java).also {
                 startActivity(it)
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0)
             }
         }
         val stopwatchTab: Button = findViewById(R.id.stopwatch_button)
         stopwatchTab.setOnClickListener {
             Intent(this, StopwatchActivity::class.java).also {
                 startActivity(it)
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0)
             }
         }
         val timerTab: Button = findViewById(R.id.timer_button)
         timerTab.setOnClickListener {
             Intent(this, TimerActivity::class.java).also {
                 startActivity(it)
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0)
             }
         }
 
         val customiseBtn: ImageButton = findViewById(R.id.customise_button)
         customiseBtn.setOnClickListener {
-            Mutables.previousPage = "FocusActivity";
+            Mutables.previousPage = "FocusActivity"
             Intent(this, CustomiseActivity::class.java).also {
                 startActivity(it)
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0, 0)
             }
         }
 
@@ -101,10 +105,10 @@ class FocusActivity : AppCompatActivity() {
         val editLongBreakName: EditText = findViewById(R.id.editLongBrkName) // textfield that holds name of long break
         sessionLabel = findViewById(R.id.session_label) //text displaying if session is work or a break
         timeRemaining  = findViewById(R.id.time_remaining) //countdown area
-        val pauseBtn: ImageButton = findViewById(R.id.pause_focus) //pause the timer; when pressed, it changes to a play for resume
+        val pauseBtn: ImageButton = findViewById(R.id.pause_focus) //pause the timer when pressed, it changes to a play for resume
         val continueBtn: ImageButton = findViewById(R.id.continue_focus) //resume timer after pause
-        val soundOnBtn: ImageButton = findViewById(R.id.sound_on_focus) //play music in background?
-        val muteBtn: ImageButton = findViewById(R.id.focus_sound) //mute music?
+        val soundOnBtn: ImageButton = findViewById(R.id.focus_sound_on) //play music in background?
+        val muteBtn: ImageButton = findViewById(R.id.focus_sound_off) //mute music?
         val cancelFocus: ImageButton = findViewById(R.id.cancel_focus) //cancel session
         val beginFocus: ImageButton = findViewById(R.id.begin_focus) //start focus
         val editWrkMin: NumberPicker = findViewById(R.id.wrk_min) //number of minutes for work countdowm
@@ -157,9 +161,18 @@ class FocusActivity : AppCompatActivity() {
         timeRemaining.visibility = View.GONE
         pauseBtn.visibility = View.GONE
         continueBtn.visibility = View.GONE
-        soundOnBtn.visibility = View.GONE
+        muteBtn.visibility = View.GONE
         cancelFocus.visibility = View.GONE
 
+        soundOnBtn.setOnClickListener {
+            Mutables.playSound = false
+            muteBtn.visibility = View.VISIBLE
+        }
+
+        muteBtn.setOnClickListener {
+            Mutables.playSound = true
+            soundOnBtn.visibility = View.VISIBLE
+        }
 
         editWrk.addTextChangedListener(object : TextWatcher {
 
@@ -251,6 +264,7 @@ class FocusActivity : AppCompatActivity() {
                 editLongBreakName.visibility = View.GONE
                 beginFocus.visibility = View.GONE
                 muteBtn.visibility = View.GONE
+                soundOnBtn.visibility = View.GONE
                 editWrkMin.visibility = View.GONE
                 editWrkSec.visibility = View.GONE
                 editLongMin.visibility = View.GONE
@@ -321,7 +335,11 @@ class FocusActivity : AppCompatActivity() {
             editShortBrkName.visibility = View.VISIBLE
             editLongBreakName.visibility = View.VISIBLE
             beginFocus.visibility = View.VISIBLE
-            muteBtn.visibility = View.VISIBLE
+            if (Mutables.playSound === true){
+                soundOnBtn.visibility = View.VISIBLE
+            }else{
+                muteBtn.visibility = View.VISIBLE
+            }
             editWrkMin.visibility = View.VISIBLE
             editWrkSec.visibility = View.VISIBLE
             editLongMin.visibility = View.VISIBLE
@@ -381,6 +399,12 @@ class FocusActivity : AppCompatActivity() {
         timerState = TimerState.Stopped
         if (onOwn) {
             Log.i("FocusActivity","called by onFinish")
+
+            if (Mutables.playSound === true) {
+                var mediaPlayer = MediaPlayer.create(this, R.raw.lync_ringtone6)
+                mediaPlayer.start()
+                mediaPlayer.setOnCompletionListener { mediaPlayer.release() }
+            }
             if (sesh.equals("work")) {
                 Log.i("FocusActivity","and sesh is work")
                 count = count + 1
