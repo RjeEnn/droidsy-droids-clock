@@ -13,7 +13,7 @@
             android:name=".SetAlarmActivity"
             android:exported="true" />
         <activity
-            android:name=".CustomiseIndividualActivity"
+            android:name=".SettingsActivity"
             android:exported="true" />
         <activity
             android:name=".CustomiseActivity"

@@ -70,6 +70,21 @@ class TimerActivity : AppCompatActivity() {
             }
         }
 
+        val settingsBtn: ImageButton = findViewById(R.id.settings_button)
+        customiseBtn.setOnClickListener {
+            Mutables.previousPage = "TimerActivity"
+            Intent(this, SettingsActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(0, 0)
+            }
+        }
+
+        val worldClockTab: Button = findViewById(R.id.world_clock_button)
+        if (!Mutables.showAlarm) { alarmTab.visibility = View.GONE }
+        if (!Mutables.showStopwatch) { stopwatchTab.visibility = View.GONE }
+        if (!Mutables.showFocus) { focusTab.visibility = View.GONE }
+        if (!Mutables.showWorldClock) { worldClockTab.visibility = View.GONE }
+
         fun startStopwatch(){
             Intent(this, StopwatchActivity::class.java).also {
                 startActivity(it)

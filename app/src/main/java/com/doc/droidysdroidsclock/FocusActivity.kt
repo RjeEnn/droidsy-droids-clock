@@ -45,6 +45,7 @@ class FocusActivity : AppCompatActivity() {
     private var x2:Float = 0.0F
     private var y1:Float = 0.0F
     private var y2:Float = 0.0F
+    private var tone = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +59,14 @@ class FocusActivity : AppCompatActivity() {
             cl.setBackgroundResource(R.drawable.gradient2)
         }else {
             cl.setBackgroundResource(R.drawable.gradient3)
+        }
+
+        if (Mutables.focusTone === "lync_ringtone5") {
+            tone = R.raw.lync_ringtone5
+        } else if (Mutables.focusTone === "lync_ringtone6") {
+            tone = R.raw.lync_ringtone6
+        }else {
+            tone = R.raw.lync_videoadded
         }
 
         /*
@@ -100,6 +109,21 @@ class FocusActivity : AppCompatActivity() {
                 overridePendingTransition(0, 0)
             }
         }
+
+        val settingsBtn: ImageButton = findViewById(R.id.settings_button)
+        customiseBtn.setOnClickListener {
+            Mutables.previousPage = "FocusActivity"
+            Intent(this, SettingsActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(0, 0)
+            }
+        }
+
+        val worldClockTab: Button = findViewById(R.id.world_clock_button)
+        if (!Mutables.showAlarm) { alarmTab.visibility = View.GONE }
+        if (!Mutables.showStopwatch) { stopwatchTab.visibility = View.GONE }
+        if (!Mutables.showTimer) { timerTab.visibility = View.GONE }
+        if (!Mutables.showWorldClock) { worldClockTab.visibility = View.GONE }
 
         fun startTimer(){
             Intent(this, TimerActivity::class.java).also {
@@ -146,7 +170,6 @@ class FocusActivity : AppCompatActivity() {
         val editLongSec: NumberPicker = findViewById(R.id.long_sec) //number of minutes for work countdowm
         val editShortMin: NumberPicker = findViewById(R.id.short_min) //number of minutes for work countdowm
         val editShortSec: NumberPicker = findViewById(R.id.short_sec) //number of minutes for work countdowm
-        val moreBtn: ImageButton = findViewById(R.id.more_button) //settings
 
         if (editWrkMin != null) {
             editWrkMin.minValue = 0
@@ -301,7 +324,7 @@ class FocusActivity : AppCompatActivity() {
                 editShortMin.visibility = View.GONE
                 editShortSec.visibility = View.GONE
                 customiseBtn.visibility = View.GONE
-                moreBtn.visibility = View.GONE
+                settingsBtn.visibility = View.GONE
             }
         }
 
@@ -376,7 +399,7 @@ class FocusActivity : AppCompatActivity() {
             editShortMin.visibility = View.VISIBLE
             editShortSec.visibility = View.VISIBLE
             customiseBtn.visibility = View.VISIBLE
-            moreBtn.visibility = View.VISIBLE
+            settingsBtn.visibility = View.VISIBLE
         }
 
     }
@@ -430,7 +453,7 @@ class FocusActivity : AppCompatActivity() {
             Log.i("FocusActivity","called by onFinish")
 
             if (Mutables.playSound === true) {
-                var mediaPlayer = MediaPlayer.create(this, R.raw.lync_ringtone6)
+                var mediaPlayer = MediaPlayer.create(this, tone)
                 mediaPlayer.start()
                 mediaPlayer.setOnCompletionListener { mediaPlayer.release() }
             }

@@ -2,6 +2,7 @@ package com.doc.droidysdroidsclock
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.NumberPicker
@@ -61,6 +62,21 @@ class SetAlarmActivity: AppCompatActivity() {
                 overridePendingTransition(0, 0)
             }
         }
+
+        val settingsBtn: ImageButton = findViewById(R.id.settings_button)
+        customiseBtn.setOnClickListener {
+            Mutables.previousPage = "SetAlarmActivity"
+            Intent(this, SettingsActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(0, 0)
+            }
+        }
+
+        val worldClockTab: Button = findViewById(R.id.world_clock_button)
+        if (!Mutables.showStopwatch) { stopwatchTab.visibility = View.GONE }
+        if (!Mutables.showTimer) { timerTab.visibility = View.GONE }
+        if (!Mutables.showFocus) { focusTab.visibility = View.GONE }
+        if (!Mutables.showWorldClock) { worldClockTab.visibility = View.GONE }
 
 
         val hrPicker: NumberPicker = findViewById(R.id.alrm_hr)

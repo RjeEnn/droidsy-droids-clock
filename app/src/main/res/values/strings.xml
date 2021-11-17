@@ -50,6 +50,11 @@
     <string name="set_colour_button_ul">set colour</string>
     <string name="start_colour">#574BCD</string>
 
+    <string name="settings"><b>Settings</b></string>
+    <string name="alarm_ringtone"><b>Alarm Tone</b></string>
+    <string name="focus_ringtone"><b>Focus Tone</b></string>
+    <string name="pages"><b>Visible Pages</b></string>
+
     <string name="customise"><b>Customise</b></string>
     <string name="theme"><b>Theme</b></string>
     <string name="apply"><b>Apply To</b></string>
@@ -59,4 +64,5 @@
     <string name="timer_checkbox">Timer Page</string>
     <string name="focus_checkbox">Focus Page</string>
     <string name="alarm_checkbox">Alarm Page</string>
+    <string name="world_clock_checkbox">World Clock Page</string>
 </resources>
