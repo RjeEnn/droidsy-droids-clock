@@ -7,15 +7,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.Editable
+import android.text.Layout
 import android.text.TextWatcher
 import android.util.Log
+import android.view.MotionEvent
 import android.view.View
 import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.doc.droidysdroidsclock.util.Mutables
 import com.doc.droidysdroidsclock.util.PrefUtil
-import java.io.IOError
-import java.io.IOException
 
 
 class FocusActivity : AppCompatActivity() {
@@ -41,6 +41,10 @@ class FocusActivity : AppCompatActivity() {
     private var shortSec: Int = 0
     private var sesh: String = "work"
     private var count: Int = 0
+    private var x1:Float = 0.0F
+    private var x2:Float = 0.0F
+    private var y1:Float = 0.0F
+    private var y2:Float = 0.0F
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -96,6 +100,31 @@ class FocusActivity : AppCompatActivity() {
                 overridePendingTransition(0, 0)
             }
         }
+
+        fun startTimer(){
+            Intent(this, TimerActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(0, 0)
+            }
+        }
+
+        val activity_focus = findViewById<View>(android.R.id.content).getRootView()
+        activity_focus.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View, m: MotionEvent): Boolean {
+                if (m.action === MotionEvent.ACTION_DOWN) {
+                    x1 = m.x
+                    y1 = m.y
+                } else if (m.action === MotionEvent.ACTION_UP) {
+                    x2 = m.x
+                    y2 = m.y
+                    if (x1 < x2) {
+                        //swiped right
+                        startTimer()
+                    }
+                }
+                return false
+            }
+        })
 
         /*
          * get items in layout

@@ -3,6 +3,7 @@ package com.doc.droidysdroidsclock
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
@@ -11,6 +12,12 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.doc.droidysdroidsclock.util.Mutables
 
 class StopwatchActivity : AppCompatActivity() {
+
+    private var x1:Float = 0.0F
+    private var x2:Float = 0.0F
+    private var y1:Float = 0.0F
+    private var y2:Float = 0.0F
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stopwatch)
@@ -62,6 +69,39 @@ class StopwatchActivity : AppCompatActivity() {
             }
         }
 
+        fun startAlarm(){
+            Intent(this, AlarmActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(0, 0)
+            }
+        }
+        fun startTimer(){
+            Intent(this, TimerActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(0, 0)
+            }
+        }
+
+        val activity_stopwatch = findViewById<View>(android.R.id.content).getRootView()
+        activity_stopwatch.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View, m: MotionEvent): Boolean {
+                if (m.action === MotionEvent.ACTION_DOWN) {
+                    x1 = m.x
+                    y1 = m.y
+                } else if (m.action === MotionEvent.ACTION_UP) {
+                    x2 = m.x
+                    y2 = m.y
+                    if (x1 < x2) {
+                        //swiped right
+                        startAlarm()
+                    }else if (x1 > x2) {
+                        //swiped left
+                        startTimer()
+                    }
+                }
+                return false
+            }
+        })
 
         val timing: TextView = findViewById(R.id.timing)
         val format: TextView = findViewById(R.id.format)
