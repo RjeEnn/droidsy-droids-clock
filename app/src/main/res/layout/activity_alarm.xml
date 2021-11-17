@@ -126,6 +126,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/rectangle_1"
+                android:clickable="true"
                 android:elevation="4dp">
 
                 <Switch
@@ -167,6 +168,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginBottom="10dp"
+                    android:editable="true"
                     android:fontFamily="@font/comfortaa_bold"
                     android:text="@string/am11"
                     android:textColor="#FFFFFF"
@@ -182,6 +184,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/rectangle_1"
+                android:clickable="true"
                 android:elevation="4dp">
 
                 <Switch
@@ -223,6 +226,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginBottom="10dp"
+                    android:editable="true"
                     android:fontFamily="@font/comfortaa_bold"
                     android:text="@string/pm1"
                     android:textColor="#FFFFFF"
@@ -238,6 +242,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/rectangle_1"
+                android:clickable="true"
                 android:elevation="4dp">
 
                 <Switch
@@ -279,6 +284,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginBottom="10dp"
+                    android:editable="true"
                     android:fontFamily="@font/comfortaa_bold"
                     android:text="@string/pm3"
                     android:textColor="#FFFFFF"
@@ -294,6 +300,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/rectangle_1"
+                android:clickable="true"
                 android:elevation="4dp">
 
                 <Switch
@@ -335,6 +342,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginBottom="10dp"
+                    android:editable="true"
                     android:fontFamily="@font/comfortaa_bold"
                     android:text="@string/pm10"
                     android:textColor="#FFFFFF"
@@ -350,6 +358,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/rectangle_1"
+                android:clickable="true"
                 android:elevation="4dp">
 
                 <Switch
@@ -391,6 +400,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginBottom="10dp"
+                    android:editable="true"
                     android:fontFamily="@font/comfortaa_bold"
                     android:text="@string/pm11"
                     android:textColor="#FFFFFF"
@@ -402,18 +412,5 @@
 
         </LinearLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/new_alm_btn"
-        android:layout_width="150dp"
-        android:layout_height="38dp"
-        android:background="@drawable/rectangle_2"
-        android:text="@string/new_alm"
-        android:textAllCaps="false"
-        android:theme="@style/btns"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
