@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextClock
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
@@ -42,6 +43,13 @@ class MainActivity : AppCompatActivity() {
         val focusTab: Button = findViewById(R.id.focus_button)
         focusTab.setOnClickListener {
             Intent(this, FocusActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(0, 0);
+            }
+        }
+        val customiseBtn: ImageButton = findViewById(R.id.imageButton4)
+        customiseBtn.setOnClickListener {
+            Intent(this, CustomiseIndividualActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(0, 0);
             }

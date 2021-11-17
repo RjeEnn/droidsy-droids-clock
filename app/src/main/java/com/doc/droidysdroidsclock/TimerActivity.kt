@@ -43,7 +43,13 @@ class TimerActivity : AppCompatActivity() {
                 overridePendingTransition(0, 0);
             }
         }
-
+        val customiseBtn: ImageButton = findViewById(R.id.imageButton4)
+        customiseBtn.setOnClickListener {
+            Intent(this, CustomiseActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(0, 0);
+            }
+        }
 
         val hrPicker: NumberPicker = findViewById(R.id.timer_hr)
         val minPicker: NumberPicker = findViewById(R.id.timer_min)

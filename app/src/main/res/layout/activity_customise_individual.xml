@@ -8,7 +8,7 @@
     tools:context=".CustomiseActivity">
 
     <Button
-        android:id="@+id/begin_focus"
+        android:id="@+id/set_colour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/comfortaa_bold"
@@ -21,6 +21,12 @@
         tools:layout_editor_absoluteY="587dp"
         tools:ignore="MissingConstraints" />
 
-    
+    <TextView
+        android:id="@+id/text34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Colour"
+        tools:ignore="MissingConstraints"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

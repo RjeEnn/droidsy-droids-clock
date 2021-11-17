@@ -3,6 +3,7 @@ package com.doc.droidysdroidsclock
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 
 class AlarmActivity: AppCompatActivity() {
@@ -45,6 +46,14 @@ class AlarmActivity: AppCompatActivity() {
         setBtn.setOnClickListener {
             Intent(this, SetAlarmActivity::class.java).also {
                 startActivity(it)
+            }
+        }
+
+        val customiseBtn: ImageButton = findViewById(R.id.imageButton4)
+        customiseBtn.setOnClickListener {
+            Intent(this, CustomiseIndividualActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(0, 0);
             }
         }
     }

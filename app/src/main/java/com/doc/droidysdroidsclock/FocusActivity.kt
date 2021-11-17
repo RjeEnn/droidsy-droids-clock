@@ -4,9 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.*
+import com.doc.droidysdroidsclock.util.Mutables
 import com.doc.droidysdroidsclock.util.PrefUtil
 
 
@@ -66,6 +69,14 @@ class FocusActivity : AppCompatActivity() {
         val timerTab: Button = findViewById(R.id.timer_button)
         timerTab.setOnClickListener {
             Intent(this, TimerActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(0, 0);
+            }
+        }
+
+        val customiseBtn: ImageButton = findViewById(R.id.imageButton4)
+        customiseBtn.setOnClickListener {
+            Intent(this, CustomiseActivity::class.java).also {
                 startActivity(it)
                 overridePendingTransition(0, 0);
             }
@@ -137,6 +148,48 @@ class FocusActivity : AppCompatActivity() {
         soundOnBtn.visibility = View.GONE
         cancelFocus.visibility = View.GONE
 
+
+        editWrk.addTextChangedListener(object : TextWatcher {
+
+            override fun afterTextChanged(s: Editable) {}
+
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                Mutables.work = s.toString()
+            }
+        })
+
+        editLongBreakName.addTextChangedListener(object : TextWatcher {
+
+            override fun afterTextChanged(s: Editable) {}
+
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                Mutables.brk2 = s.toString()
+            }
+        })
+
+        editShortBrkName.addTextChangedListener(object : TextWatcher {
+
+            override fun afterTextChanged(s: Editable) {}
+
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                Mutables.brk1 = s.toString()
+            }
+        })
 
         /*
          * set listener for begin button in view 1
@@ -318,21 +371,21 @@ class FocusActivity : AppCompatActivity() {
                 if (count < 4) {
                     Log.i("FocusActivity","and short break is next")
                     sesh = "short"
-                    sessionLabel.text = "@string/brk1"
+                    sessionLabel.text = Mutables.brk1
                 } else {
                     Log.i("FocusActivity","and long break is next")
                     sesh = "long"
-                    sessionLabel.text = "@string/brk1"
+                    sessionLabel.text = Mutables.brk2
                 }
             } else {
                 Log.i("FocusActivity","and sesh is a break")
                 sesh = "work"
-                sessionLabel.text = "@string/work"
+                sessionLabel.text = Mutables.work
             }
         }else{
             Log.i("FocusActivity","by cancel button")
             sesh = "work"
-            sessionLabel.text = "@string/brk1work"
+            sessionLabel.text = Mutables.work
         }
         setNewTimerLength()
         //progress_countdown.progress = 0
