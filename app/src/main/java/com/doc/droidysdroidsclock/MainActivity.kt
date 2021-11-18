@@ -139,7 +139,6 @@ class MainActivity : AppCompatActivity() {
 
         val c: Context = applicationContext
         val timeClock: TextClock = findViewById(R.id.digitalClock)
-        timeClock.timeZone = "GMT-1"
         val typeface = ResourcesCompat.getFont(c,R.font.comfortaa_bold)
         timeClock.typeface = typeface
 

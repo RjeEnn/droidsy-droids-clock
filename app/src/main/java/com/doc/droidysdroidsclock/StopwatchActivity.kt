@@ -21,6 +21,8 @@ class StopwatchActivity : AppCompatActivity() {
     private var timeElapsed = 0.0
     private var stopped: Boolean = true
     private var paused: Boolean = false
+    private var lappedTime = 0.0
+    private var newLap = 0.0
     private lateinit var serviceIntent: Intent
 
     private var x1:Float = 0.0F
@@ -165,11 +167,11 @@ class StopwatchActivity : AppCompatActivity() {
         timeAnimOut.duration = 500
 
         lapBtn.setOnClickListener {
-            lapTime.text = timing.text
+            lappedTime = timeElapsed - newLap
+            newLap = timeElapsed
+            lapTime.text = getTimeStringFromDouble(lappedTime)
             lapTime.startAnimation(timeAnimIn)
             lap.startAnimation(timeAnimIn)
-
-            timeElapsed = 0.0
         }
 
         val anim = ObjectAnimator.ofFloat(union, "rotation", 0f, 360f)
@@ -253,6 +255,7 @@ class StopwatchActivity : AppCompatActivity() {
 
             stopped = true
             paused = false
+            newLap = 0.0
         }
 
     }

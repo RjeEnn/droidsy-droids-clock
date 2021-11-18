@@ -11,15 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DroidysDroidsClock">
+        <activity
+            android:name=".StartupActivity"
+            android:exported="false" />
+
         <receiver
             android:name=".TimerNotifReceiver"
             android:enabled="true"
             android:exported="false">
             <intent-filter>
-                <action android:name="start"/>
-                <action android:name="stop"/>
-                <action android:name="pause"/>
-                <action android:name="resume"/>
+                <action android:name="start" />
+                <action android:name="stop" />
+                <action android:name="pause" />
+                <action android:name="resume" />
             </intent-filter>
         </receiver>
         <receiver
@@ -49,7 +53,6 @@
             android:name=".StopwatchActivity"
             android:exported="true"
             android:launchMode="singleTop" />
-            android:exported="true" />
         <activity
             android:name=".WorldClockActivity"
             android:exported="true" />
