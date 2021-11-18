@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AlphaAnimation
+import android.widget.ImageButton
 import android.widget.ImageView
 
 class StartupActivity : AppCompatActivity() {
@@ -14,18 +15,23 @@ class StartupActivity : AppCompatActivity() {
         val by: ImageView = findViewById(R.id.imageViewBy)
         val clock: ImageView = findViewById(R.id.imageViewClock)
         val plus: ImageView = findViewById(R.id.imageViewPlus)
+        val enter: ImageButton = findViewById(R.id.btn_enter)
 
 
         val clockAnim = AlphaAnimation(0f, 1f)
-        clockAnim.duration = 1000
+        val byAnim = AlphaAnimation(0f, 1f)
+        clockAnim.duration = 1500
+        byAnim.duration = 3500
 
-        by.startAnimation(clockAnim)
         clock.startAnimation(clockAnim)
         plus.startAnimation(clockAnim)
+        by.startAnimation(byAnim)
 
-        Intent(this, MainActivity::class.java).also {
-            startActivity(it)
-            overridePendingTransition(0, 0)
+        enter.setOnClickListener {
+            Intent(this, MainActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(0, 0)
+            }
         }
     }
 }
