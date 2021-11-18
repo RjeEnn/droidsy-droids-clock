@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.NumberPicker
+import android.widget.TextClock
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.doc.droidysdroidsclock.util.Mutables
@@ -111,10 +113,18 @@ class SetAlarmActivity: AppCompatActivity() {
         minPicker.maxValue = min.size - 1
         minPicker.displayedValues = min
 
+        val a1: TextView = findViewById(R.id.alm_time1)
+        val a2: TextView = findViewById(R.id.alm_time2)
+        val a3: TextView = findViewById(R.id.alm_time3)
+        val a4: TextView = findViewById(R.id.alm_time4)
+        val a5: TextView = findViewById(R.id.alm_time5)
 
         val setAlmBtn: Button = findViewById(R.id.set_alm)
         setAlmBtn.setOnClickListener {
-            finish()
+            {
+                a1.setText("11")
+            }
+
         }
     }
 }
